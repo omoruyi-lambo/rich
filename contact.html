@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact Us | Rich &amp; Well</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        :root {
+            --primary-blue: #0066cc;
+            --surface-light: #FFFFFF;
+            --text-dark: #1a1a1a;
+            --text-muted: #666666;
+            --border-light: #e5e7eb;
+        }
+        
+        .light-card {
+            background: #FFFFFF;
+            border: 1px solid var(--border-light);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        
+        .nav-link {
+            color: var(--text-muted);
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: var(--primary-blue);
+        }
+        
+        input::placeholder, textarea::placeholder {
+            color: #9ca3af;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0066cc",
+                        "on-primary": "#FFFFFF",
+                        "surface": "#FFFFFF",
+                        "background": "#FFFFFF",
+                        "on-surface": "#1a1a1c",
+                        "on-surface-variant": "#666666",
+                        "outline": "#e5e7eb",
+                        "surface-container-low": "#f9fafb"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.75rem",
+                        "lg": "1.5rem",
+                        "xl": "2.5rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "section-padding": "100px",
+                        "margin-mobile": "20px",
+                        "container-max": "1280px"
+                    },
+                    fontFamily: {
+                        "body-md": ["Inter"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Hanken Grotesk"]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- Top Navigation Bar (Master Light Version) -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-outline">
+<nav class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-2">
+<img alt="Rich &amp; Well" class="h-8 md:h-10" src="https://lh3.googleusercontent.com/aida/ADBb0ui9MhtVIZEujCeu4Pu5noOB5TYeJudGVrTGRqzmQ98zXSsYOmThaI4CB1myU2bT4NUVDD2E7pAsXIxYQ7EMRjHpyX-i1ayii4iR-YykPY7mmb8cfNmXON7z6gJC-KkYLoAp8Af4gJfJBWtbRLKv4-c0ysgHyI46y-CT2yENEOOUHFA-j--uTxutHTN1zpQ_r0fLZXnvxJYwX0PSWptAuzMiUBzugTEiad6I6iFkotVogU_w9TRz1NhP_EE"/>
+</div>
+<div class="hidden lg:flex items-center space-x-8">
+<a class="nav-link font-medium text-sm uppercase tracking-wider" href="index.html">Home</a>
+<a class="nav-link font-medium text-sm uppercase tracking-wider" href="about.html">About</a>
+<a class="nav-link font-medium text-sm uppercase tracking-wider" href="services.html">Services</a>
+<a class="nav-link font-medium text-sm uppercase tracking-wider" href="product-suite.html">Product Suite</a>
+<a class="nav-link font-medium text-sm uppercase tracking-wider" href="business-opportunity.html">Opportunity</a>
+<a class="nav-link font-medium text-sm uppercase tracking-wider" href="blog.html">Blog</a>
+<a class="text-primary font-bold text-sm uppercase tracking-wider border-b-2 border-primary pb-1" href="contact.html">Contact Us</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden md:block text-on-surface font-medium hover:text-primary transition-colors text-sm">Login</button>
+<a class="px-6 py-2.5 bg-primary text-white rounded-full font-bold hover:shadow-lg hover:shadow-primary/20 transition-all active:scale-95 text-sm uppercase" href="signup.html">Get Started</a>
+<span class="material-symbols-outlined text-on-surface cursor-pointer">language</span>
+<button class="lg:hidden text-on-surface" id="mobile-menu-toggle">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<!-- Mobile Menu Overlay -->
+<div class="fixed inset-0 bg-white z-[60] flex flex-col p-6 hidden" id="mobile-menu">
+<div class="flex justify-between items-center mb-12">
+<img alt="Rich &amp; Well" class="h-8" src="https://lh3.googleusercontent.com/aida/ADBb0ui9MhtVIZEujCeu4Pu5noOB5TYeJudGVrTGRqzmQ98zXSsYOmThaI4CB1myU2bT4NUVDD2E7pAsXIxYQ7EMRjHpyX-i1ayii4iR-YykPY7mmb8cfNmXON7z6gJC-KkYLoAp8Af4gJfJBWtbRLKv4-c0ysgHyI46y-CT2yENEOOUHFA-j--uTxutHTN1zpQ_r0fLZXnvxJYwX0PSWptAuzMiUBzugTEiad6I6iFkotVogU_w9TRz1NhP_EE"/>
+<button id="close-mobile-menu"><span class="material-symbols-outlined text-3xl">close</span></button>
+</div>
+<div class="flex flex-col space-y-6">
+<a class="text-xl font-bold uppercase" href="index.html">Home</a>
+<a class="text-xl font-bold uppercase" href="about.html">About</a>
+<a class="text-xl font-bold uppercase" href="services.html">Services</a>
+<a class="text-xl font-bold uppercase" href="product-suite.html">Product Suite</a>
+<a class="text-xl font-bold uppercase" href="business-opportunity.html">Opportunity</a>
+<a class="text-xl font-bold uppercase" href="blog.html">Blog</a>
+<a class="text-xl font-bold uppercase text-primary" href="contact.html">Contact Us</a>
+</div>
+<div class="mt-auto flex flex-col gap-4">
+<a class="w-full py-4 bg-gray-100 text-center rounded-full font-bold uppercase" href="login.html">Login</a>
+<a class="w-full py-4 bg-primary text-white text-center rounded-full font-bold uppercase" href="signup.html">Get Started</a>
+</div>
+</div>
+<script>
+const menuBtn = document.getElementById('mobile-menu-toggle');
+const closeBtn = document.getElementById('close-mobile-menu');
+const menu = document.getElementById('mobile-menu');
+if(menuBtn && closeBtn && menu) {
+menuBtn.onclick = () => menu.classList.remove('hidden');
+closeBtn.onclick = () => menu.classList.add('hidden');
+
+    // Close mobile menu on link click
+    menu.querySelectorAll('a').forEach(link => {
+        link.onclick = () => {
+            menu.classList.add('hidden');
+        };
+    });
+}
+</script>
+</header>
+<!-- Hero Section (Clean Light Design) -->
+<section class="relative pt-40 pb-20 bg-white">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center animate-fade-in">
+<div class="inline-block mb-4 px-4 py-1.5 bg-blue-50 text-primary rounded-full text-xs font-bold uppercase tracking-widest">
+            Support Center
+        </div>
+<h1 class="font-display-lg text-4xl md:text-6xl font-extrabold text-on-surface tracking-tight mb-6">
+            CONTACT <span class="text-primary italic">US</span>
+</h1>
+<p class="text-on-surface-variant text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+            Take the first step, we will take care of the rest. Our team of specialists is ready to guide you through your metamorphosis.
+        </p>
+</div>
+</section>
+<!-- Main Content Section -->
+<section class="max-w-container-max mx-auto md:px-margin-desktop pb-section-padding px-6">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
+<!-- Get In Touch Info -->
+<div class="animate-fade-in" style="animation-delay: 0.1s">
+<div class="mb-12">
+<h2 class="text-3xl font-bold mb-4">GET IN TOUCH</h2>
+<div class="w-16 h-1 bg-primary rounded-full"></div>
+</div>
+<div class="space-y-10">
+<!-- Visit Us -->
+<div class="flex gap-6 items-start group">
+<div class="flex-shrink-0 w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-2xl">location_on</span>
+</div>
+<div>
+<h3 class="font-bold text-lg mb-2">Visit Us</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                            108, New Lagos Road (2nd Floor),<br/>
+                            By Akugbe Junction, Benin City,<br/>
+                            Edo State, Nigeria.
+                        </p>
+</div>
+</div>
+<!-- Email Us -->
+<div class="flex gap-6 items-start group">
+<div class="flex-shrink-0 w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-2xl">mail</span>
+</div>
+<div>
+<h3 class="font-bold text-lg mb-2">Email Us</h3>
+<a class="text-on-surface-variant hover:text-primary transition-colors block" href="mailto:Info@Richandwell-lifestyle.space">
+                            Info@Richandwell-lifestyle.space
+                        </a>
+</div>
+</div>
+<!-- Hotlines -->
+<div class="flex gap-6 items-start group">
+<div class="flex-shrink-0 w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-2xl">phone_in_talk</span>
+</div>
+<div>
+<h3 class="font-bold text-lg mb-2">Hotlines</h3>
+<div class="space-y-1">
+<a class="block text-on-surface-variant hover:text-primary transition-colors" href="tel:+2348077136110">+234 807 713 6110</a>
+<a class="block text-on-surface-variant hover:text-primary transition-colors" href="https://wa.me/2348132469273">+234 813 246 9273 (Whatsapp)</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Social Links -->
+<div class="mt-16 pt-8 border-t border-outline">
+<p class="text-xs font-bold text-on-surface-variant mb-6 uppercase tracking-widest">Connect With Us</p>
+<div class="flex gap-3">
+<a class="w-10 h-10 rounded-full flex items-center justify-center bg-gray-50 text-gray-600 hover:bg-primary hover:text-white transition-all" href="contact.html" aria-label="Share"><span class="material-symbols-outlined text-sm">share</span></a>
+<a class="w-10 h-10 rounded-full flex items-center justify-center bg-gray-50 text-gray-600 hover:bg-primary hover:text-white transition-all" href="contact.html" aria-label="Chat"><span class="material-symbols-outlined text-sm">chat</span></a>
+<a class="w-10 h-10 rounded-full flex items-center justify-center bg-gray-50 text-gray-600 hover:bg-primary hover:text-white transition-all" href="contact.html" aria-label="Camera"><span class="material-symbols-outlined text-sm">camera</span></a>
+<a class="w-10 h-10 rounded-full flex items-center justify-center bg-gray-50 text-gray-600 hover:bg-primary hover:text-white transition-all" href="contact.html" aria-label="Work"><span class="material-symbols-outlined text-sm">work</span></a>
+</div>
+</div>
+</div>
+<!-- Form Section (Refined Light Theme) -->
+<div class="animate-fade-in" style="animation-delay: 0.2s">
+<div class="bg-surface-container-low rounded-2xl p-8 md:p-10 border border-outline">
+<h2 class="text-2xl font-bold mb-8 text-on-surface uppercase tracking-tight">Drop Us A <span class="text-primary">Line</span></h2>
+<form class="space-y-5">
+<div class="space-y-1.5">
+<label class="text-xs font-bold text-on-surface uppercase tracking-wider ml-1">Your Name</label>
+<input class="w-full bg-white border border-outline rounded-xl p-4 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-on-surface outline-none" placeholder="Enter your full name" type="text"/>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
+<div class="space-y-1.5">
+<label class="text-xs font-bold text-on-surface uppercase tracking-wider ml-1">Email Address</label>
+<input class="w-full bg-white border border-outline rounded-xl p-4 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-on-surface outline-none" placeholder="email@example.com" type="email"/>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-bold text-on-surface uppercase tracking-wider ml-1">Phone Number</label>
+<input class="w-full bg-white border border-outline rounded-xl p-4 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-on-surface outline-none" placeholder="+234 ..." type="tel"/>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-bold text-on-surface uppercase tracking-wider ml-1">Subject</label>
+<input class="w-full bg-white border border-outline rounded-xl p-4 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-on-surface outline-none" placeholder="What is this about?" type="text"/>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-bold text-on-surface uppercase tracking-wider ml-1">Message</label>
+<textarea class="w-full bg-white border border-outline rounded-xl p-4 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-on-surface outline-none" placeholder="Tell us more about how we can help..." rows="4"></textarea>
+</div>
+<button class="w-full py-4 bg-primary text-white font-bold rounded-full text-sm hover:bg-blue-700 transition-all hover:shadow-lg hover:shadow-primary/30 active:scale-95 flex items-center justify-center gap-3 uppercase tracking-widest mt-4" type="submit">
+<span>Send Message</span>
+<span class="material-symbols-outlined text-lg">send</span>
+</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- Map Section (Light Integration) -->
+<section class="w-full h-[450px] relative overflow-hidden bg-gray-100 border-t border-outline">
+<img class="w-full h-full object-cover grayscale opacity-40 mix-blend-multiply" data-alt="Light themed professional map grid" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6wONrX6-L7URv8zHP1i1vnVWUNmUd131sKqPuR0h6YsKeyQBpRguReYI2qT5iw_yKfbAmnzU_-MNtqNxkeWVIVOKePWa9jevIqi7h1tboPsUiHG70c05Z9Sm6e1gwYv54kGC5oLGU9Rwgbz1mrqBAblKG3dtw2ZvuYrDIyqNsPFKNxFgM5SgNiOWu_6U0edlUN58XiPPMa9Ve6iiYqcOvtOtrDSd363EmuIiww2oOmmG2LbnowYU5squ_8M2pjvHXeYrUO49i1wh7"/>
+<div class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+<div class="relative">
+<div class="w-12 h-12 bg-primary/20 rounded-full animate-ping absolute inset-0"></div>
+<div class="w-12 h-12 bg-primary rounded-full relative flex items-center justify-center shadow-xl shadow-primary/30">
+<span class="material-symbols-outlined text-white text-2xl">location_on</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer (Master Light Version) -->
+<footer class="bg-white border-t border-outline py-20">
+<div class="w-full px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="space-y-6">
+<img alt="Rich &amp; Well" class="h-8" src="https://lh3.googleusercontent.com/aida/ADBb0ui9MhtVIZEujCeu4Pu5noOB5TYeJudGVrTGRqzmQ98zXSsYOmThaI4CB1myU2bT4NUVDD2E7pAsXIxYQ7EMRjHpyX-i1ayii4iR-YykPY7mmb8cfNmXON7z6gJC-KkYLoAp8Af4gJfJBWtbRLKv4-c0ysgHyI46y-CT2yENEOOUHFA-j--uTxutHTN1zpQ_r0fLZXnvxJYwX0PSWptAuzMiUBzugTEiad6I6iFkotVogU_w9TRz1NhP_EE"/>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                Empowering Diaspora and Indigenous African Families with Wealth and Wellness through a Multi-Faceted Ecosystem of Holistic Services.
+            </p>
+</div>
+<div>
+<h4 class="font-bold text-on-surface mb-6 uppercase tracking-wider text-sm">Quick Links</h4>
+<ul class="space-y-4 text-sm text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="index.html">Home</a></li>
+<li><a class="hover:text-primary transition-colors" href="about.html">About Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="services.html">Services</a></li>
+<li><a class="hover:text-primary transition-colors" href="product-suite.html">Product Suite</a></li>
+<li><a class="hover:text-primary transition-colors" href="business-opportunity.html">Opportunity</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-on-surface mb-6 uppercase tracking-wider text-sm">Find Us</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+                108, New Lagos Road (2nd Floor),<br/>
+                By Akugbe Junction, Benin City,<br/>
+                Edo State, Nigeria.
+            </p>
+</div>
+<div>
+<h4 class="font-bold text-on-surface mb-6 uppercase tracking-wider text-sm">Contact</h4>
+<ul class="space-y-4 text-sm text-on-surface-variant">
+<li>Hotline: +234 907 451 2471</li>
+<li>Whatsapp: +234 813 246 9273</li>
+<li><a class="hover:text-primary transition-colors" href="mailto:Info@Richandwell-lifestyle.com">Info@Richandwell-lifestyle.com</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop mt-20 pt-8 border-t border-outline flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium text-on-surface-variant uppercase tracking-widest">
+<p>© 2024 Rich &amp; Well Ecosystem. All rights reserved.</p>
+<div class="flex gap-8">
+<a class="hover:text-primary" href="contact.html">Privacy Policy</a>
+<a class="hover:text-primary" href="contact.html">Terms</a>
+<a class="hover:text-primary" href="contact.html">Cookies</a>
+</div>
+</div>
+</footer>
+<script>
+    // Reveal animation observer
+    const observerOptions = { threshold: 0.1 };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = "1";
+                entry.target.classList.add('animate-fade-in');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('section > div').forEach(div => {
+        div.style.opacity = "0";
+        observer.observe(div);
+    });
+</script>
+</body></html>

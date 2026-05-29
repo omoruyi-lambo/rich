@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Register | Rich &amp; Well Ecosystem</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#0056D2',
+                        'surface': '#131313',
+                        'on-surface-variant': '#475569',
+                        'background': '#FFFFFF',
+                        'outline': '#E2E8F0',
+                        'brand-blue': '#0056D2'
+                    },
+                    fontFamily: {
+                        'display': ['Hanken Grotesk', 'sans-serif'],
+                        'body': ['Inter', 'sans-serif'],
+                        'headline-md': ['Hanken Grotesk', 'sans-serif'],
+                        'body-md': ['Inter', 'sans-serif'],
+                        'body-lg': ['Inter', 'sans-serif'],
+                        'label-sm': ['Hanken Grotesk', 'sans-serif'],
+                        'display-lg': ['Hanken Grotesk', 'sans-serif'],
+                        'display-lg-mobile': ['Hanken Grotesk', 'sans-serif']
+                    },
+                    fontSize: {
+                        'xs': '0.75rem',
+                        'sm': '0.875rem',
+                        'base': '1rem',
+                        'lg': '1.125rem',
+                        'xl': '1.25rem',
+                        '2xl': '1.5rem',
+                        '3xl': '1.875rem',
+                        '4xl': '2.25rem',
+                        '5xl': '3rem',
+                        '6xl': '3.75rem',
+                        '7xl': '4.5rem',
+                    },
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined { vertical-align: middle; }
+        .premium-shadow {
+            box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.05), 0 0 1px 0 rgba(0, 0, 0, 0.1);
+        }
+        .tier-btn-active {
+            background-color: #0056D2 !important;
+            color: white !important;
+            border-color: #0056D2 !important;
+            box-shadow: 0 4px 12px rgba(0, 86, 210, 0.2);
+        }
+        #lang-dropdown { display: none; }
+        #lang-selector:focus-within #lang-dropdown { display: block; }
+    </style>
+</head>
+<body class="bg-white text-surface font-body selection:bg-primary/20">
+<!-- Navigation (Exact from SCREEN_69) -->
+<nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-outline">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 md:h-20 flex items-center justify-between">
+<div class="flex items-center gap-2 flex-shrink-0">
+<img alt="Logo" class="h-8 md:h-10 w-auto" src="https://lh3.googleusercontent.com/aida/ADBb0ui9MhtVIZEujCeu4Pu5noOB5TYeJudGVrTGRqzmQ98zXSsYOmThaI4CB1myU2bT4NUVDD2E7pAsXIxYQ7EMRjHpyX-i1ayii4iR-YykPY7mmb8cfNmXON7z6gJC-KkYLoAp8Af4gJfJBWtbRLKv4-c0ysgHyI46y-CT2yENEOOUHFA-j--uTxutHTN1zpQ_r0fLZXnvxJYwX0PSWptAuzMiUBzugTEiad6I6iFkotVogU_w9TRz1NhP_EE"/>
+<span class="font-display font-bold text-lg md:text-xl hidden lg:inline-block">Rich &amp; Well</span>
+</div>
+<!-- Desktop Navigation Items -->
+<div class="hidden xl:flex items-center gap-6">
+<a class="text-sm font-medium hover:text-primary transition-colors whitespace-nowrap" href="#">Home</a>
+<a class="text-sm font-medium hover:text-primary transition-colors whitespace-nowrap" href="#">About Us</a>
+<a class="text-sm font-medium hover:text-primary transition-colors whitespace-nowrap" href="#">Services</a>
+<a class="text-sm font-medium hover:text-primary transition-colors whitespace-nowrap" href="#">Product Suite</a>
+<a class="text-sm font-medium hover:text-primary transition-colors whitespace-nowrap" href="#">Blog</a>
+<a class="text-sm font-medium hover:text-primary transition-colors whitespace-nowrap" href="#">Business Opportunity</a>
+<a class="text-sm font-medium hover:text-primary transition-colors whitespace-nowrap" href="#">Contact Us</a>
+</div>
+<!-- Action Items -->
+<div class="hidden lg:flex items-center gap-4">
+<div class="relative group" id="lang-selector">
+<button class="flex items-center gap-1 text-xs font-bold text-on-surface-variant cursor-pointer border border-outline px-2 py-1.5 rounded hover:bg-slate-50 transition-colors">
+<span class="material-symbols-outlined text-base">language</span> EN
+                </button>
+<div class="absolute top-full right-0 mt-2 w-32 bg-white border border-outline rounded-lg shadow-xl py-2 group-hover:block" id="lang-dropdown">
+<a class="block px-4 py-2 text-xs hover:bg-slate-50" href="#">English</a>
+<a class="block px-4 py-2 text-xs hover:bg-slate-50" href="#">Français</a>
+<a class="block px-4 py-2 text-xs hover:bg-slate-50" href="#">Hausa</a>
+</div>
+</div>
+<a class="text-sm font-semibold text-on-surface-variant hover:text-primary px-3 py-2 transition-colors" href="#">Login</a>
+<a class="px-5 py-2.5 bg-primary text-white rounded-full text-sm font-bold hover:bg-blue-700 transition-all shadow-sm hover:shadow-md" href="#">Get Started</a>
+</div>
+<!-- Mobile Toggle -->
+<button aria-label="Menu" class="xl:hidden p-2 text-surface" id="mobile-toggle">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</nav>
+<!-- Mobile Menu -->
+<div class="fixed inset-0 z-[60] bg-white hidden flex-col p-6 overflow-y-auto transition-all duration-300" id="mobile-menu">
+<div class="flex justify-between items-center mb-10">
+<span class="font-display font-bold text-xl">Rich &amp; Well</span>
+<button class="p-2" id="mobile-close"><span class="material-symbols-outlined text-3xl">close</span></button>
+</div>
+<div class="flex flex-col gap-6 text-xl font-semibold">
+<a class="hover:text-primary transition-colors" href="#">Home</a>
+<a class="hover:text-primary transition-colors" href="#">About Us</a>
+<a class="hover:text-primary transition-colors" href="#">Services</a>
+<a class="hover:text-primary transition-colors" href="#">Product Suite</a>
+<a class="hover:text-primary transition-colors" href="#">Blog</a>
+<a class="hover:text-primary transition-colors" href="#">Business Opportunity</a>
+<a class="hover:text-primary transition-colors" href="#">Contact Us</a>
+<hr class="border-outline my-2"/>
+<div class="flex items-center justify-between py-2 text-sm text-on-surface-variant font-bold">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined">language</span> Language
+            </div>
+<select class="bg-transparent border-none focus:ring-0 text-primary">
+<option>English (EN)</option>
+<option>Français (FR)</option>
+</select>
+</div>
+<a class="text-center py-4 border border-outline rounded-2xl text-lg hover:bg-slate-50 transition-colors" href="#">Login</a>
+<a class="text-center py-4 bg-primary text-white rounded-2xl text-lg font-bold shadow-lg shadow-primary/20" href="#">Get Started</a>
+</div>
+</div>
+<main class="relative pt-32 pb-24 min-h-screen bg-slate-50">
+<div class="max-w-[800px] mx-auto px-6 md:px-0">
+<!-- Header Section -->
+<div class="text-center mb-12">
+<span class="inline-block px-4 py-1.5 mb-6 bg-primary/10 text-primary rounded-full text-[10px] md:text-[11px] font-bold uppercase tracking-widest">Metamorphosis</span>
+<h1 class="font-display text-4xl md:text-6xl font-bold mb-4 text-surface tracking-tight">Create Your Account</h1>
+<p class="font-body text-lg text-on-surface-variant max-w-xl mx-auto">Enter the sovereign ecosystem where luxury wellness meets industrial-grade economic empowerment.</p>
+</div>
+<!-- Registration Card (Structure from existing form) -->
+<div class="bg-white rounded-3xl p-8 md:p-12 premium-shadow border border-outline">
+<form class="space-y-8">
+<!-- Membership Tier Selector -->
+<div>
+<label class="text-[11px] text-primary uppercase font-bold tracking-wider mb-4 block">Select Membership Tier</label>
+<div class="grid grid-cols-2 md:grid-cols-5 gap-3">
+<button class="tier-btn py-3 px-2 rounded-xl border border-outline bg-slate-50 text-on-surface-variant hover:border-primary/50 hover:text-primary transition-all font-bold text-[10px] tracking-wider tier-btn-active" type="button">BRONZE</button>
+<button class="tier-btn py-3 px-2 rounded-xl border border-outline bg-slate-50 text-on-surface-variant hover:border-primary/50 hover:text-primary transition-all font-bold text-[10px] tracking-wider" type="button">SILVER</button>
+<button class="tier-btn py-3 px-2 rounded-xl border border-outline bg-slate-50 text-on-surface-variant hover:border-primary/50 hover:text-primary transition-all font-bold text-[10px] tracking-wider" type="button">GOLD</button>
+<button class="tier-btn py-3 px-2 rounded-xl border border-outline bg-slate-50 text-on-surface-variant hover:border-primary/50 hover:text-primary transition-all font-bold text-[10px] tracking-wider" type="button">DIAMOND</button>
+<button class="tier-btn py-3 px-2 rounded-xl border border-outline bg-slate-50 text-on-surface-variant hover:border-primary/50 hover:text-primary transition-all font-bold text-[10px] tracking-wider" type="button">PLATINUM</button>
+</div>
+</div>
+<!-- Input Fields Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-[11px] text-on-surface-variant uppercase font-bold ml-1">First Name</label>
+<input class="w-full bg-slate-50 border border-outline focus:ring-2 focus:ring-primary/20 focus:border-primary rounded-xl px-4 py-4 text-surface placeholder:text-slate-400 transition-all outline-none" placeholder="John" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-[11px] text-on-surface-variant uppercase font-bold ml-1">Last Name</label>
+<input class="w-full bg-slate-50 border border-outline focus:ring-2 focus:ring-primary/20 focus:border-primary rounded-xl px-4 py-4 text-surface placeholder:text-slate-400 transition-all outline-none" placeholder="Doe" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-[11px] text-on-surface-variant uppercase font-bold ml-1">Username</label>
+<input class="w-full bg-slate-50 border border-outline focus:ring-2 focus:ring-primary/20 focus:border-primary rounded-xl px-4 py-4 text-surface placeholder:text-slate-400 transition-all outline-none" placeholder="johndoe_elite" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-[11px] text-on-surface-variant uppercase font-bold ml-1">Email</label>
+<input class="w-full bg-slate-50 border border-outline focus:ring-2 focus:ring-primary/20 focus:border-primary rounded-xl px-4 py-4 text-surface placeholder:text-slate-400 transition-all outline-none" placeholder="john@example.com" type="email"/>
+</div>
+<div class="space-y-2">
+<label class="text-[11px] text-on-surface-variant uppercase font-bold ml-1">Password</label>
+<input class="w-full bg-slate-50 border border-outline focus:ring-2 focus:ring-primary/20 focus:border-primary rounded-xl px-4 py-4 text-surface placeholder:text-slate-400 transition-all outline-none" placeholder="••••••••" type="password"/>
+</div>
+<div class="space-y-2">
+<label class="text-[11px] text-on-surface-variant uppercase font-bold ml-1">Confirm Password</label>
+<input class="w-full bg-slate-50 border border-outline focus:ring-2 focus:ring-primary/20 focus:border-primary rounded-xl px-4 py-4 text-surface placeholder:text-slate-400 transition-all outline-none" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-[11px] text-on-surface-variant uppercase font-bold ml-1">Sponsor Username (Optional)</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-lg">person_add</span>
+<input class="w-full bg-slate-50 border border-outline focus:ring-2 focus:ring-primary/20 focus:border-primary rounded-xl pl-12 pr-4 py-4 text-surface placeholder:text-slate-400 transition-all outline-none" placeholder="wealth_mentor" type="text"/>
+</div>
+</div>
+<!-- Terms -->
+<div class="flex items-center gap-3">
+<input class="w-5 h-5 rounded border-outline bg-slate-50 text-primary focus:ring-primary/20" id="terms" type="checkbox"/>
+<label class="text-sm text-on-surface-variant" for="terms">I agree with the <a class="text-primary font-semibold hover:underline" href="#">site terms</a></label>
+</div>
+<!-- CTA -->
+<div class="pt-4">
+<button class="w-full py-5 rounded-full bg-primary text-white font-bold text-lg tracking-wider hover:bg-blue-700 hover:shadow-xl hover:shadow-primary/20 transition-all" type="submit">CREATE ACCOUNT</button>
+<p class="mt-6 text-center text-sm text-on-surface-variant">
+                        Already have an account? <a class="text-primary font-bold hover:underline" href="#">Login here</a>
+</p>
+</div>
+</form>
+</div>
+<!-- Trust Badges (Matching Master Aesthetic) -->
+<div class="mt-12 flex flex-wrap justify-center items-center gap-10 opacity-70">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">verified_user</span>
+<span class="text-[10px] uppercase font-bold tracking-widest">Secure Enrollment</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">encrypted</span>
+<span class="text-[10px] uppercase font-bold tracking-widest">End-to-End Encryption</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">policy</span>
+<span class="text-[10px] uppercase font-bold tracking-widest">Sovereign Data Rights</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer (Exact from SCREEN_69 with corrected logo) -->
+<footer class="bg-white border-t border-outline py-12 md:py-20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6">
+<div class="flex flex-col md:flex-row justify-between items-center gap-10">
+<div class="flex items-center gap-3">
+<img alt="Logo" class="h-8 md:h-10" src="https://lh3.googleusercontent.com/aida/ADBb0ui9MhtVIZEujCeu4Pu5noOB5TYeJudGVrTGRqzmQ98zXSsYOmThaI4CB1myU2bT4NUVDD2E7pAsXIxYQ7EMRjHpyX-i1ayii4iR-YykPY7mmb8cfNmXON7z6gJC-KkYLoAp8Af4gJfJBWtbRLKv4-c0ysgHyI46y-CT2yENEOOUHFA-j--uTxutHTN1zpQ_r0fLZXnvxJYwX0PSWptAuzMiUBzugTEiad6I6iFkotVogU_w9TRz1NhP_EE"/>
+<span class="font-display font-bold text-xl md:text-2xl text-surface">Rich &amp; Well</span>
+</div>
+<p class="text-xs md:text-sm text-on-surface-variant text-center order-3 md:order-none">© 2024 Rich &amp; Well Ecosystem. All rights reserved.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 md:w-12 md:h-12 border border-outline rounded-full flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all text-on-surface-variant shadow-sm" href="#"><span class="material-symbols-outlined text-sm md:text-base">public</span></a>
+<a class="w-10 h-10 md:w-12 md:h-12 border border-outline rounded-full flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all text-on-surface-variant shadow-sm" href="#"><span class="material-symbols-outlined text-sm md:text-base">alternate_email</span></a>
+<a class="w-10 h-10 md:w-12 md:h-12 border border-outline rounded-full flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all text-on-surface-variant shadow-sm" href="#"><span class="material-symbols-outlined text-sm md:text-base">share</span></a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+    // Navigation functionality from SCREEN_69
+    const toggle = document.getElementById('mobile-toggle');
+    const close = document.getElementById('mobile-close');
+    const menu = document.getElementById('mobile-menu');
+
+    if(toggle) toggle.onclick = () => {
+        menu.classList.remove('hidden');
+        menu.classList.add('flex');
+    };
+    if(close) close.onclick = () => {
+        menu.classList.add('hidden');
+        menu.classList.remove('flex');
+    };
+    
+    // Header shadow on scroll
+    window.addEventListener('scroll', () => {
+        const nav = document.querySelector('nav');
+        if (window.scrollY > 20) {
+            nav.classList.add('shadow-md');
+        } else {
+            nav.classList.remove('shadow-md');
+        }
+    });
+
+    // Membership tier interaction
+    const tierButtons = document.querySelectorAll('.tier-btn');
+    tierButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            tierButtons.forEach(b => {
+                b.classList.remove('tier-btn-active');
+            });
+            btn.classList.add('tier-btn-active');
+        });
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && menu) {
+            menu.classList.add('hidden');
+            menu.classList.remove('flex');
+        }
+    });
+</script>
+</body></html>

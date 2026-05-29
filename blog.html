@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Evolution Blog | Rich &amp; Well Ecosystem</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#0056D2',
+                        'surface': '#131313',
+                        'on-surface-variant': '#475569',
+                        'background': '#FFFFFF',
+                        'outline': '#E2E8F0',
+                        'surface-container-low': '#fafafa'
+                    },
+                    fontFamily: {
+                        'display': ['Hanken Grotesk', 'sans-serif'],
+                        'body': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined { vertical-align: middle; }
+        .premium-card {
+            background: #ffffff;
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .premium-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.08);
+            border-color: #0056D2;
+        }
+        .text-gradient-blue {
+            background: linear-gradient(135deg, #0056D2 0%, #00c6ff 100%);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Mobile Menu Transitions */
+        #mobile-menu {
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+            transform: translateY(-100%);
+            opacity: 0;
+            pointer-events: none;
+        }
+        #mobile-menu.active {
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: auto;
+        }
+        /* Language Dropdown Style */
+        #lang-dropdown { display: none; }
+        #lang-selector:focus-within #lang-dropdown { display: block; }
+    </style>
+</head>
+<body class="bg-white text-surface font-body selection:bg-primary/20 overflow-x-hidden antialiased">
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-outline">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 md:h-20 flex items-center justify-between transition-all duration-300" id="nav-container">
+<div class="flex items-center gap-2 flex-shrink-0">
+<img alt="Logo" class="h-8 md:h-10 w-auto" src="https://lh3.googleusercontent.com/aida/ADBb0ui9MhtVIZEujCeu4Pu5noOB5TYeJudGVrTGRqzmQ98zXSsYOmThaI4CB1myU2bT4NUVDD2E7pAsXIxYQ7EMRjHpyX-i1ayii4iR-YykPY7mmb8cfNmXON7z6gJC-KkYLoAp8Af4gJfJBWtbRLKv4-c0ysgHyI46y-CT2yENEOOUHFA-j--uTxutHTN1zpQ_r0fLZXnvxJYwX0PSWptAuzMiUBzugTEiad6I6iFkotVogU_w9TRz1NhP_EE"/>
+<span class="font-display font-bold text-lg md:text-xl hidden sm:inline-block">Rich &amp; Well</span>
+</div>
+<!-- Desktop Navigation Items -->
+<div class="hidden xl:flex items-center gap-6">
+<a class="text-sm font-medium hover:text-primary transition-colors whitespace-nowrap" href="index.html">Home</a>
+<a class="text-sm font-medium hover:text-primary transition-colors whitespace-nowrap" href="about.html">About Us</a>
+<a class="text-sm font-medium hover:text-primary transition-colors whitespace-nowrap" href="services.html">Services</a>
+<a class="text-sm font-medium hover:text-primary transition-colors whitespace-nowrap" href="product-suite.html">Product Suite</a>
+<a class="text-sm font-bold text-primary border-b-2 border-primary transition-colors whitespace-nowrap" href="blog.html">Blog</a>
+<a class="text-sm font-medium hover:text-primary transition-colors whitespace-nowrap" href="business-opportunity.html">Business Opportunity</a>
+<a class="text-sm font-medium hover:text-primary transition-colors whitespace-nowrap" href="contact.html">Contact Us</a>
+</div>
+<!-- Action Items -->
+<div class="hidden lg:flex items-center gap-4">
+<!-- Language Selector with Dropdown Simulation -->
+<div class="relative group" id="lang-selector">
+<button class="flex items-center gap-1 text-xs font-bold text-on-surface-variant cursor-pointer border border-outline px-2 py-1.5 rounded hover:bg-slate-50 transition-colors">
+<span class="material-symbols-outlined text-base">language</span> EN
+                </button>
+<div class="absolute top-full right-0 mt-2 w-32 bg-white border border-outline rounded-lg shadow-xl py-2 hidden group-hover:block" id="lang-dropdown">
+<a class="block px-4 py-2 text-xs hover:bg-slate-50" href="#">English</a>
+<a class="block px-4 py-2 text-xs hover:bg-slate-50" href="#">Français</a>
+<a class="block px-4 py-2 text-xs hover:bg-slate-50" href="#">Hausa</a>
+</div>
+</div>
+<a class="text-sm font-semibold text-on-surface-variant hover:text-primary px-3 py-2 transition-colors" href="login.html">Login</a>
+<a class="px-5 py-2.5 bg-primary text-white rounded-full text-sm font-bold hover:bg-blue-700 transition-all shadow-sm hover:shadow-md" href="signup.html">Get Started</a>
+</div>
+<!-- Mobile Toggle -->
+<button aria-label="Menu" class="xl:hidden p-2 text-surface hover:text-primary transition-colors" id="mobile-toggle">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</nav>
+<!-- Premium Full-Screen Mobile Overlay Menu -->
+<div class="fixed inset-0 z-[60] bg-white flex flex-col p-6 overflow-y-auto" id="mobile-menu">
+<div class="flex justify-between items-center mb-10">
+<div class="flex items-center gap-2">
+<img alt="Logo" class="h-8" src="https://lh3.googleusercontent.com/aida/ADBb0ui9MhtVIZEujCeu4Pu5noOB5TYeJudGVrTGRqzmQ98zXSsYOmThaI4CB1myU2bT4NUVDD2E7pAsXIxYQ7EMRjHpyX-i1ayii4iR-YykPY7mmb8cfNmXON7z6gJC-KkYLoAp8Af4gJfJBWtbRLKv4-c0ysgHyI46y-CT2yENEOOUHFA-j--uTxutHTN1zpQ_r0fLZXnvxJYwX0PSWptAuzMiUBzugTEiad6I6iFkotVogU_w9TRz1NhP_EE"/>
+<span class="font-display font-bold text-xl">Rich &amp; Well</span>
+</div>
+<button class="p-2 text-surface hover:text-primary transition-colors" id="mobile-close">
+<span class="material-symbols-outlined text-3xl">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-6 text-2xl font-display font-bold mb-12">
+<a class="hover:text-primary transition-colors py-2 border-b border-outline/50" href="index.html">Home</a>
+<a class="hover:text-primary transition-colors py-2 border-b border-outline/50" href="about.html">About Us</a>
+<a class="hover:text-primary transition-colors py-2 border-b border-outline/50" href="services.html">Services</a>
+<a class="hover:text-primary transition-colors py-2 border-b border-outline/50" href="product-suite.html">Product Suite</a>
+<a class="text-primary py-2 border-b border-outline/50" href="blog.html">Blog</a>
+<a class="hover:text-primary transition-colors py-2 border-b border-outline/50" href="business-opportunity.html">Business Opportunity</a>
+<a class="hover:text-primary transition-colors py-2" href="contact.html">Contact Us</a>
+</div>
+<div class="mt-auto space-y-6">
+<div class="flex items-center justify-between p-4 bg-slate-50 rounded-2xl">
+<div class="flex items-center gap-3 text-on-surface-variant font-semibold">
+<span class="material-symbols-outlined">language</span> Language
+            </div>
+<select class="bg-transparent border-none focus:ring-0 text-primary font-bold text-sm">
+<option>English (EN)</option>
+<option>Français (FR)</option>
+<option>Hausa (HA)</option>
+</select>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<a class="flex items-center justify-center py-4 border border-outline rounded-2xl text-lg font-bold hover:bg-slate-50 transition-colors" href="login.html">Login</a>
+<a class="flex items-center justify-center py-4 bg-primary text-white rounded-2xl text-lg font-bold shadow-lg shadow-primary/20 active:scale-95 transition-transform" href="signup.html">Get Started</a>
+</div>
+</div>
+</div>
+<!-- Hero Section -->
+<header class="relative pt-32 pb-16 md:pt-48 md:pb-24 overflow-hidden bg-slate-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 text-center reveal">
+<span class="inline-block px-4 py-1.5 mb-6 bg-primary/10 text-primary rounded-full text-[10px] md:text-[11px] font-bold uppercase tracking-widest">
+            Metamorphosis through Frequency
+        </span>
+<h1 class="font-display text-4xl md:text-5xl lg:text-7xl font-bold mb-6 leading-tight text-surface">
+            THE <span class="text-gradient-blue italic">EVOLUTION</span> BLOG
+        </h1>
+<p class="text-base md:text-lg lg:text-xl text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
+            Insights, Success Stories &amp; Scientific Breakthroughs from the Global Rich &amp; Well Revolution. Explore the frontier of human potential.
+        </p>
+</div>
+</header>
+<!-- Main Content / Blog Grid -->
+<main class="max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-24">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+<!-- Post 1 -->
+<article class="premium-card rounded-2xl overflow-hidden flex flex-col h-full reveal">
+<div class="relative h-64 overflow-hidden">
+<img alt="A clean, minimalist high-tech workspace featuring a laptop displaying a sophisticated financial dashboard and wellness metrics." class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFj21GftF7_heCiGMAJRY4QsEL0sjqEX9jYVYfXn4JOl-HrNd9yAcLkjKkkO5Ga1OVbsGm5NZOut6AfbXH2OLWuoeFOd8fBcPPaHMuvhKw0iy_3kxnD4fVsvgPY-B-xj_zMNsNPS2w5VLl8vIT3uwotIG2ihbd322itS5RBga_qFOvr_mUqH-9MFbJX_T7HpVPRLNjncaYVpBDPWAESNymRIywZSoENtqpaJDm2X0iG-dz1f_HkFj05g6XQgm3sFpi47lYr-GfeUqI"/>
+<div class="absolute top-4 left-4">
+<span class="bg-primary text-white px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase">TECH</span>
+</div>
+</div>
+<div class="p-8 flex-grow">
+<div class="flex items-center space-x-4 mb-4 text-on-surface-variant text-xs font-semibold uppercase tracking-wider">
+<div class="flex items-center"><span class="material-symbols-outlined text-[18px] mr-1" data-icon="calendar_today">calendar_today</span> Jan 15, 2026</div>
+<div class="flex items-center"><span class="material-symbols-outlined text-[18px] mr-1" data-icon="schedule">schedule</span> 5 Min Read</div>
+</div>
+<h2 class="font-display text-2xl text-surface mb-4 font-bold">Landing page</h2>
+<p class="text-on-surface-variant mb-8 line-clamp-3">How to design a landing page that captures the essence of luxury and technological prowess while driving high-value conversions.</p>
+<button class="flex items-center text-primary font-bold group/btn transition-all">
+                    READ POST 
+                    <span class="material-symbols-outlined ml-2 transition-transform group-hover/btn:translate-x-2" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- Post 2 -->
+<article class="premium-card rounded-2xl overflow-hidden flex flex-col h-full reveal">
+<div class="relative h-64 overflow-hidden">
+<img alt="A futuristic laboratory setting with glowing scientific apparatus, visualizing terahertz waves." class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHAvEIoSgqTxE2XSCpJQqKrKKT1f6BxqEL71ip6jYICPm_AWtZpvoXnynX-ykTR-n8hJbA4IP9nUFWsccNXRTgk71EVqQrPYeOODZy3xs24phypjTrx8dLOjBeI_c9g0lsttuhRw8vjTrxu7ypjl0CIO3mE9K-nsDVtIytcExrTB6kMV9BcHRzK3CHi1Bq5zdUwU5DDH_DQ7PxXjlmtjkj-om6d7Q7cC-XlwQ9JlRrZis_kS2QdwRGkLQCUm84g25UGWsY8Ztd_iHS"/>
+<div class="absolute top-4 left-4">
+<span class="bg-primary text-white px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase">SCIENCE</span>
+</div>
+</div>
+<div class="p-8 flex-grow">
+<div class="flex items-center space-x-4 mb-4 text-on-surface-variant text-xs font-semibold uppercase tracking-wider">
+<div class="flex items-center"><span class="material-symbols-outlined text-[18px] mr-1" data-icon="calendar_today">calendar_today</span> Jan 15, 2026</div>
+<div class="flex items-center"><span class="material-symbols-outlined text-[18px] mr-1" data-icon="schedule">schedule</span> 8 Min Read</div>
+</div>
+<h2 class="font-display text-2xl text-surface mb-4 font-bold">The Science of Terahertz</h2>
+<p class="text-on-surface-variant mb-8 line-clamp-3">Explore how low-frequency waves interact with cellular structures to promote healing, vitality, and cellular rejuvenation at an atomic level.</p>
+<button class="flex items-center text-primary font-bold group/btn transition-all">
+                    READ POST 
+                    <span class="material-symbols-outlined ml-2 transition-transform group-hover/btn:translate-x-2" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- Post 3 -->
+<article class="premium-card rounded-2xl overflow-hidden flex flex-col h-full reveal">
+<div class="relative h-64 overflow-hidden">
+<img alt="An ultra-luxury overwater villa in the Maldives at sunset." class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1xCZVvwg91iOp567QQD6Km7gxEIry43hZ4epk4lEychcP8vzq-MzYUHgeLB_CDcUEo_L9AnOafSz-gboqAJMR0yBl-2L1IB8DmcqEP4F6lER_6inrr02D1f1P19uJgwwuk_vd6YY29qqYN8ROiF0oAer3w1-m6SggzTZf_pzOJBIuI4wysTrHcmEbD7j_nbdLoFB9Cqtc7TBl9ivQ_DkPvkfIrA6qcPkOU9LFudTvg0jIkpz_WENbGvIr2EFhUTk9V24jf8nQY32i"/>
+<div class="absolute top-4 left-4">
+<span class="bg-primary text-white px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase">EVENTS</span>
+</div>
+</div>
+<div class="p-8 flex-grow">
+<div class="flex items-center space-x-4 mb-4 text-on-surface-variant text-xs font-semibold uppercase tracking-wider">
+<div class="flex items-center"><span class="material-symbols-outlined text-[18px] mr-1" data-icon="calendar_today">calendar_today</span> Jan 15, 2026</div>
+<div class="flex items-center"><span class="material-symbols-outlined text-[18px] mr-1" data-icon="schedule">schedule</span> 4 Min Read</div>
+</div>
+<h2 class="font-display text-2xl text-surface mb-4 font-bold">Leadership Retreat 2026</h2>
+<p class="text-on-surface-variant mb-8 line-clamp-3">Join our top leaders in the Maldives for an exclusive training and networking event, focusing on the future of frequency technology.</p>
+<button class="flex items-center text-primary font-bold group/btn transition-all">
+                    READ POST 
+                    <span class="material-symbols-outlined ml-2 transition-transform group-hover/btn:translate-x-2" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- Post 4 (Featured) -->
+<article class="premium-card rounded-2xl overflow-hidden flex flex-col h-full lg:col-span-2 reveal">
+<div class="grid grid-cols-1 md:grid-cols-2 h-full">
+<div class="relative h-full min-h-[300px]">
+<img alt="A grand, high-energy launch event stage in a vibrant city." class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMpcuxB_ITlBlyCE986CyTnOjhFp2Knyq0VLlwf4xRkL_xengYTgRHCrPeurBlu-ac18M4fhYlWksioDtce5Jm3KlsVh9ydLMow5kAQV11LZQUXMeqCGifgA3QJTNUeO10kPhyRqkKneg_S9b_8FVp2qZXBzwHJfCmQV5YG4y3m_bBngesaKtSD5cqBmAJdlfwalUww57Lqg2MSYcWhHC-ZY2tXkkQDjdTwiItJJ9j10ql2-0kLUig_S012We502a6zmxS12PuRFCP"/>
+<div class="absolute top-4 left-4">
+<span class="bg-primary text-white px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase">GLOBAL</span>
+</div>
+</div>
+<div class="p-10 flex flex-col justify-center">
+<div class="flex items-center space-x-4 mb-4 text-on-surface-variant text-xs font-semibold uppercase tracking-wider">
+<div class="flex items-center"><span class="material-symbols-outlined text-[18px] mr-1" data-icon="calendar_today">calendar_today</span> Jan 12, 2026</div>
+<div class="flex items-center"><span class="material-symbols-outlined text-[18px] mr-1" data-icon="schedule">schedule</span> 6 Min Read</div>
+</div>
+<h2 class="font-display text-3xl text-surface mb-4 font-bold leading-tight">Grand Launch Event</h2>
+<p class="text-on-surface-variant mb-8 line-clamp-4">We are excited to announce our grand opening in Lagos next month! Join us for an evening of innovation, celebration, and the first reveal of our 2027 roadmap.</p>
+<button class="w-fit flex items-center text-primary font-bold group/btn transition-all">
+                        READ POST 
+                        <span class="material-symbols-outlined ml-2 transition-transform group-hover/btn:translate-x-2" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Post 5 -->
+<article class="premium-card rounded-2xl overflow-hidden flex flex-col h-full reveal">
+<div class="relative h-64 overflow-hidden">
+<img alt="A sleek, high-end product shot of a futuristic device." class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDd2CTjdNP6N_DaV8WKIH4hdrycIxVCpHZO_gJyXaprISLzeXk8GVU_AlYf_XUXy8B-fLLJ7MxT6jV0W3h9MS1Ei_vpYXU51KKiNPNRfAWbNNyG8ZPIR7PzF-pd_u0AvKlQvWQGf1zVey0wv-IshJTO8nRevKLm_SHr7Mzvd4aZzw6qr4CfRwEb5hDZQNHfKkJe0huxqbh-F58-mQGQjyUUFXKsClKrt4VxI85gehbpY_ahFBL3UUezxyeVJLopXerWkGoPwV70xCtm"/>
+<div class="absolute top-4 left-4">
+<span class="bg-primary text-white px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase">LATEST</span>
+</div>
+</div>
+<div class="p-8 flex-grow">
+<div class="flex items-center space-x-4 mb-4 text-on-surface-variant text-xs font-semibold uppercase tracking-wider">
+<div class="flex items-center"><span class="material-symbols-outlined text-[18px] mr-1" data-icon="calendar_today">calendar_today</span> Jan 12, 2026</div>
+<div class="flex items-center"><span class="material-symbols-outlined text-[18px] mr-1" data-icon="schedule">schedule</span> 3 Min Read</div>
+</div>
+<h2 class="font-display text-2xl text-surface mb-4 font-bold">New Product Alert</h2>
+<p class="text-on-surface-variant mb-8 line-clamp-3">Classic Blue 2.0 is now available in the shop. Experience the enhanced frequency output and redesigned ergonomic housing of our flagship device.</p>
+<button class="flex items-center text-primary font-bold group/btn transition-all">
+                    READ POST 
+                    <span class="material-symbols-outlined ml-2 transition-transform group-hover/btn:translate-x-2" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</article>
+</div>
+<!-- Pagination -->
+<div class="mt-24 flex justify-center items-center space-x-4 reveal">
+<button class="p-3 rounded-full border border-outline text-on-surface-variant hover:border-primary hover:text-primary transition-all">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<div class="flex space-x-2">
+<button class="w-10 h-10 rounded-full bg-primary text-white font-bold">1</button>
+<button class="w-10 h-10 rounded-full border border-outline text-surface hover:border-primary transition-all font-semibold">2</button>
+<button class="w-10 h-10 rounded-full border border-outline text-surface hover:border-primary transition-all font-semibold">3</button>
+</div>
+<button class="p-3 rounded-full border border-outline text-on-surface-variant hover:border-primary hover:text-primary transition-all">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</main>
+<!-- Newsletter Section -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 pb-24 reveal">
+<div class="relative rounded-[2.5rem] p-12 md:p-24 overflow-hidden bg-slate-50 border border-outline text-center">
+<div class="relative z-10">
+<h2 class="font-display text-3xl md:text-5xl font-bold text-surface mb-6">Stay Ahead of the Evolution</h2>
+<p class="text-on-surface-variant text-base md:text-lg mb-10 max-w-xl mx-auto leading-relaxed">Get the latest breakthroughs, exclusive invites, and success stories delivered to your inbox weekly.</p>
+<form class="flex flex-col md:flex-row max-w-lg mx-auto gap-4">
+<input class="flex-grow bg-white border border-outline focus:ring-2 focus:ring-primary text-surface rounded-full px-6 py-4 outline-none transition-all" placeholder="Enter your email" type="email"/>
+<button class="bg-primary text-white font-bold px-10 py-4 rounded-full hover:scale-105 transition-transform active:scale-95 whitespace-nowrap shadow-lg shadow-primary/20">Subscribe Now</button>
+</form>
+</div>
+<!-- Decorative subtle gradients -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-3xl rounded-full -mr-32 -mt-32"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-primary/5 blur-3xl rounded-full -ml-32 -mb-32"></div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-white border-t border-outline py-12 md:py-20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6">
+<div class="flex flex-col md:flex-row justify-between items-center gap-10">
+<div class="flex items-center gap-3">
+<img alt="Logo" class="h-8 md:h-10" src="https://lh3.googleusercontent.com/aida/ADBb0ui9MhtVIZEujCeu4Pu5noOB5TYeJudGVrTGRqzmQ98zXSsYOmThaI4CB1myU2bT4NUVDD2E7pAsXIxYQ7EMRjHpyX-i1ayii4iR-YykPY7mmb8cfNmXON7z6gJC-KkYLoAp8Af4gJfJBWtbRLKv4-c0ysgHyI46y-CT2yENEOOUHFA-j--uTxutHTN1zpQ_r0fLZXnvxJYwX0PSWptAuzMiUBzugTEiad6I6iFkotVogU_w9TRz1NhP_EE"/>
+<span class="font-display font-bold text-xl md:text-2xl text-surface">Rich &amp; Well</span>
+</div>
+<p class="text-xs md:text-sm text-on-surface-variant text-center order-3 md:order-none font-medium">© 2024 Rich &amp; Well Ecosystem. All rights reserved.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 md:w-12 md:h-12 border border-outline rounded-full flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all text-on-surface-variant shadow-sm" href="contact.html"><span class="material-symbols-outlined text-sm md:text-base">public</span></a>
+<a class="w-10 h-10 md:w-12 md:h-12 border border-outline rounded-full flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all text-on-surface-variant shadow-sm" href="contact.html"><span class="material-symbols-outlined text-sm md:text-base">alternate_email</span></a>
+<a class="w-10 h-10 md:w-12 md:h-12 border border-outline rounded-full flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all text-on-surface-variant shadow-sm" href="contact.html"><span class="material-symbols-outlined text-sm md:text-base">share</span></a>
+</div>
+</div>
+<div class="mt-12 pt-8 border-t border-outline flex flex-col md:flex-row justify-center gap-6 text-xs font-semibold text-on-surface-variant uppercase tracking-widest">
+<a class="hover:text-primary transition-colors" href="contact.html">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="contact.html">Terms of Service</a>
+<a class="hover:text-primary transition-colors" href="contact.html">Cookie Policy</a>
+</div>
+</div>
+</footer>
+<script>
+    // Navigation Scroll Effect
+    window.addEventListener('scroll', () => {
+        const nav = document.querySelector('nav');
+        const container = document.getElementById('nav-container');
+        if (window.scrollY > 20) {
+            nav.classList.add('shadow-md');
+            container.classList.remove('md:h-20');
+            container.classList.add('md:h-16');
+        } else {
+            nav.classList.remove('shadow-md');
+            container.classList.add('md:h-20');
+            container.classList.remove('md:h-16');
+        }
+    });
+
+    // Mobile Menu Toggle
+    const toggle = document.getElementById('mobile-toggle');
+    const close = document.getElementById('mobile-close');
+    const menu = document.getElementById('mobile-menu');
+
+    function openMobileMenu() {
+        menu.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+
+    function closeMobileMenu() {
+        menu.classList.remove('active');
+        document.body.style.overflow = ''; // Restore scrolling
+    }
+
+    if(toggle) toggle.onclick = openMobileMenu;
+    if(close) close.onclick = closeMobileMenu;
+
+    // Close mobile menu on escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && menu.classList.contains('active')) {
+            closeMobileMenu();
+        }
+    });
+
+    // Close mobile menu on link click
+    menu.querySelectorAll('a').forEach(link => {
+        link.onclick = closeMobileMenu;
+    });
+
+    // Reveal animations on scroll
+    const observerOptions = { threshold: 0.1 };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('opacity-100', 'translate-y-0');
+          entry.target.classList.remove('opacity-0', 'translate-y-12');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => {
+      el.classList.add('opacity-0', 'translate-y-12', 'transition-all', 'duration-1000', 'ease-out');
+      observer.observe(el);
+    });
+</script>
+</body></html>

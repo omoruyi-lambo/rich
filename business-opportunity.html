@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+
+<html class="light scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Business Opportunity | Rich &amp; Well</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#0066CC",
+                        "secondary": "#2E7D32",
+                        "background": "#FFFFFF",
+                        "surface": "#FDFDFD",
+                        "surface-container": "#F8FAFC",
+                        "on-surface": "#0F172A",
+                        "on-surface-variant": "#64748B",
+                        "outline": "#E2E8F0",
+                        "tertiary": "#94A3B8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "1.5rem",
+                        "xl": "2.5rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "display": ["Hanken Grotesk", "sans-serif"],
+                        "body": ["Inter", "sans-serif"]
+                    },
+                    "animation": {
+                        "fade-in-up": "fade-in-up 0.8s ease-out forwards"
+                    },
+                    "keyframes": {
+                        "fade-in-up": {
+                            "0%": { opacity: "0", transform: "translateY(20px)" },
+                            "100%": { opacity: "1", transform: "translateY(0)" }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, .font-display { font-family: 'Hanken Grotesk', sans-serif; }
+        
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .premium-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .premium-shadow:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+            transform: translateY(-4px);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #0066CC 0%, #004499 100%);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        #mobile-menu {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            pointer-events: none;
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        #mobile-menu.open {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface selection:bg-primary/10 overflow-x-hidden">
+<!-- Navigation (Master Nav from Homepage) -->
+<nav class="fixed top-0 w-full z-[100] border-b border-black/[0.03] glass-nav" id="navbar">
+<div class="flex justify-between items-center h-16 md:h-20 px-6 md:px-12 max-w-7xl mx-auto">
+<a class="flex items-center gap-2.5 shrink-0 group" href="#">
+<img alt="Rich &amp; Well Logo" class="h-7 md:h-9 w-auto" src="https://lh3.googleusercontent.com/aida/ADBb0ui9MhtVIZEujCeu4Pu5noOB5TYeJudGVrTGRqzmQ98zXSsYOmThaI4CB1myU2bT4NUVDD2E7pAsXIxYQ7EMRjHpyX-i1ayii4iR-YykPY7mmb8cfNmXON7z6gJC-KkYLoAp8Af4gJfJBWtbRLKv4-c0ysgHyI46y-CT2yENEOOUHFA-j--uTxutHTN1zpQ_r0fLZXnvxJYwX0PSWptAuzMiUBzugTEiad6I6iFkotVogU_w9TRz1NhP_EE"/>
+<span class="font-display text-lg md:text-xl font-bold tracking-tight text-on-surface">Rich &amp; Well</span>
+</a>
+<!-- Desktop Menu -->
+<div class="hidden xl:flex items-center gap-1">
+<a class="text-sm font-medium hover:text-primary transition-colors whitespace-nowrap" href="index.html">Home</a>
+<a class="text-sm font-medium hover:text-primary transition-colors whitespace-nowrap" href="about.html">About Us</a>
+<a class="text-sm font-medium hover:text-primary transition-colors whitespace-nowrap" href="services.html">Services</a>
+<a class="text-sm font-medium hover:text-primary transition-colors whitespace-nowrap" href="product-suite.html">Product Suite</a>
+<a class="text-sm font-bold text-primary border-b-2 border-primary transition-colors whitespace-nowrap" href="blog.html">Blog</a>
+<a class="text-sm font-medium hover:text-primary transition-colors whitespace-nowrap" href="business-opportunity.html">Business Opportunity</a>
+<a class="text-sm font-medium hover:text-primary transition-colors whitespace-nowrap" href="contact.html">Contact Us</a>
+</div>
+<div class="hidden lg:flex items-center gap-4">
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full hover:bg-black/5 cursor-pointer transition-colors group">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant group-hover:text-primary">language</span>
+<span class="text-[12px] font-bold text-on-surface-variant group-hover:text-primary">EN</span>
+</div>
+<a class="text-[13px] font-semibold text-on-surface px-4 py-2 hover:bg-black/5 rounded-full transition-colors" href="#">Login</a>
+<a class="bg-primary text-white text-[13px] font-bold px-6 py-2.5 rounded-full shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all active:scale-95" href="#">Get Started</a>
+</div>
+<button class="xl:hidden p-2 text-on-surface hover:bg-black/5 rounded-full transition-colors" id="menu-toggle">
+<span class="material-symbols-outlined text-2xl" id="menu-icon">menu</span>
+</button>
+</div>
+<!-- Mobile Navigation Overlay -->
+<div class="absolute top-full left-0 w-full bg-white border-b border-outline px-6 py-8 xl:hidden shadow-2xl" id="mobile-menu">
+<div class="flex flex-col gap-4">
+<a class="text-lg font-medium" href="index.html">Home</a>
+<a class="text-lg font-medium" href="about.html">About Us</a>
+<a class="text-lg font-medium" href="services.html">Services</a>
+<a class="text-lg font-medium" href="product-suite.html">Product Suite</a>
+<a class="text-lg font-medium" href="blog.html">Blog</a>
+<a class="text-lg font-bold text-primary" href="business-opportunity.html">Business Opportunity</a>
+<a class="text-lg font-medium" href="contact.html">Contact Us</a>
+<hr class="border-outline my-2"/>
+<div class="flex items-center justify-between">
+<a class="font-semibold text-primary" href="login.html">Login</a>
+<div class="flex items-center gap-1 font-bold">
+<span class="material-symbols-outlined text-lg">language</span> EN
+                </div>
+</div>
+<a class="w-full bg-primary text-white text-center font-bold py-4 rounded-xl" href="signup.html">Get Started</a>
+</div>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative pt-32 pb-24 md:pt-48 md:pb-32 bg-[#F8FAFC]">
+<div class="max-w-7xl mx-auto px-6 md:px-12 text-center reveal">
+<span class="inline-flex items-center px-4 py-1.5 mb-8 bg-primary/5 text-primary rounded-full text-[11px] font-bold uppercase tracking-[0.2em]">
+                The Sovereign Shift
+            </span>
+<h1 class="font-display text-4xl md:text-6xl lg:text-[72px] font-extrabold mb-8 max-w-5xl mx-auto leading-[1.1] tracking-tight text-on-surface">
+                Unlock Your <br/> <span class="italic text-gradient">Metamorphosis</span>
+</h1>
+<p class="font-body text-lg md:text-xl text-on-surface-variant max-w-3xl mx-auto mb-12 leading-relaxed">
+                Join the world's first ecosystem that pays you for your health and frequency sovereignty. A fusion of high-tech wellness and industrial-grade economic empowerment.
+            </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-5">
+<a class="w-full sm:w-auto px-10 py-5 bg-primary text-white rounded-full font-bold text-base shadow-xl shadow-primary/20 hover:bg-primary/90 transition-all hover:-translate-y-1 active:scale-95" href="#">Activate Sovereignty</a>
+<a class="w-full sm:w-auto px-10 py-5 bg-white border border-outline text-on-surface rounded-full font-bold text-base flex items-center justify-center gap-2 hover:bg-surface-container transition-all" href="#">
+                    Watch Ecosystem Intro
+                    <span class="material-symbols-outlined text-[20px]">play_circle</span>
+</a>
+</div>
+</div>
+<!-- Background Elements -->
+<div class="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
+<div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2"></div>
+<div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-secondary/5 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2"></div>
+</div>
+</section>
+<!-- Economic Engine -->
+<section class="py-24 md:py-32 bg-white">
+<div class="max-w-7xl mx-auto px-6 md:px-12">
+<div class="text-center mb-16 md:mb-20 reveal">
+<h2 class="font-display text-4xl md:text-5xl font-bold text-on-surface mb-6">The Economic Engine</h2>
+<div class="h-1 w-24 bg-primary mx-auto rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal">
+<!-- Feature Card 1 -->
+<div class="premium-card p-10 rounded-[2.5rem] bg-surface-container border border-black/[0.03] premium-shadow group">
+<div class="w-14 h-14 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+<span class="material-symbols-outlined text-3xl">account_balance_wallet</span>
+</div>
+<h3 class="font-display text-2xl font-bold text-on-surface mb-4">100% Payout Structure</h3>
+<p class="text-on-surface-variant text-base leading-relaxed">
+                        No tiered percentages. No hidden caps. 100% commissions on direct and indirect referrals. We built this for the community, not the middleman.
+                    </p>
+</div>
+<!-- Feature Card 2 -->
+<div class="premium-card p-10 rounded-[2.5rem] bg-surface-container border border-black/[0.03] premium-shadow group">
+<div class="w-14 h-14 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+<span class="material-symbols-outlined text-3xl">inventory_2</span>
+</div>
+<h3 class="font-display text-2xl font-bold text-on-surface mb-4">Members Dropshipping</h3>
+<p class="text-on-surface-variant text-base leading-relaxed">
+                        Sell FMCGs daily. No inventory, no warehousing. We handle fulfillment, you keep the profit. Scale your retail empire from your phone.
+                    </p>
+</div>
+<!-- Feature Card 3 -->
+<div class="premium-card p-10 rounded-[2.5rem] bg-surface-container border border-black/[0.03] premium-shadow group">
+<div class="w-14 h-14 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+<span class="material-symbols-outlined text-3xl">query_stats</span>
+</div>
+<h3 class="font-display text-2xl font-bold text-on-surface mb-4">Passive Income Goldmine</h3>
+<p class="text-on-surface-variant text-base leading-relaxed">
+                        Access 20+ diversified passive income streams from AAA-rated vehicles. Your wealth works as hard as your frequency tools.
+                    </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Success Steps -->
+<section class="py-24 md:py-32 bg-surface-container">
+<div class="max-w-7xl mx-auto px-6 md:px-12">
+<div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+<div class="w-full lg:w-1/2 reveal">
+<h2 class="font-display text-4xl md:text-5xl font-bold text-on-surface mb-12">3 Simple Steps to <span class="text-primary italic">Success</span></h2>
+<div class="space-y-10">
+<div class="flex gap-8 items-start group">
+<span class="font-display text-5xl md:text-6xl font-black text-outline group-hover:text-primary transition-colors duration-500 opacity-30">01</span>
+<div class="pt-2">
+<h4 class="font-display text-2xl font-bold text-on-surface mb-2">Join</h4>
+<p class="text-on-surface-variant leading-relaxed">Activate your elite membership and receive your suite of high-tech frequency wellness tools instantly.</p>
+</div>
+</div>
+<div class="flex gap-8 items-start group">
+<span class="font-display text-5xl md:text-6xl font-black text-outline group-hover:text-primary transition-colors duration-500 opacity-30">02</span>
+<div class="pt-2">
+<h4 class="font-display text-2xl font-bold text-on-surface mb-2">Share</h4>
+<p class="text-on-surface-variant leading-relaxed">Introduce others to the sovereign lifestyle. Use our proven duplication systems to scale your reach globally.</p>
+</div>
+</div>
+<div class="flex gap-8 items-start group">
+<span class="font-display text-5xl md:text-6xl font-black text-outline group-hover:text-primary transition-colors duration-500 opacity-30">03</span>
+<div class="pt-2">
+<h4 class="font-display text-2xl font-bold text-on-surface mb-2">Earn</h4>
+<p class="text-on-surface-variant leading-relaxed">Unlock multiple income streams 24/7. Watch your metabolic and financial health rise in synchronized harmony.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full lg:w-1/2 reveal">
+<div class="relative group">
+<div class="absolute -inset-4 bg-primary/10 blur-[60px] rounded-full group-hover:bg-primary/20 transition-all duration-700"></div>
+<img class="relative rounded-[2rem] w-full aspect-square object-cover border border-white shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfArqbXj6SIna0d685kDpXDSgnB-YosHCVTqDFfuUL6CoBRBDSNd2kvHqJbMtae5vZdpboohaSa8Eb6u5lzTp1jfN53WTdzcqw0dm2GTw3mOcDtRKYUBoknumNhX5wG5KKpqmCSZ6jXVZ1_BPNaKenLTQtYV03BXU-tn5YEalvJ5Q-7pAkIjrKEGlJzTUrASjUvFmdcGWk-579131Bb1suqXXO-QYxnQhrahkDjKtNGJgjUxLSUglJEXHV70Rm_9t7N1afEirbuc4X"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Money Machine Banner -->
+<section class="py-24 md:py-32 bg-white">
+<div class="max-w-7xl mx-auto px-6 md:px-12">
+<div class="relative p-10 md:p-24 rounded-[3.5rem] bg-on-surface text-white text-center overflow-hidden reveal">
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+<div class="relative z-10">
+<h2 class="font-display text-4xl md:text-7xl font-extrabold mb-10 leading-[1.1] tracking-tight">
+                        TURN <span class="text-primary">$15 / ₦24,000</span> INTO YOUR <br/> 24/7 MONEY MACHINE
+                    </h2>
+<p class="text-xl md:text-2xl text-white/70 max-w-3xl mx-auto mb-16 font-light leading-relaxed">
+                        The entry cost of a coffee, the ROI of a lifetime. Join the movement before the next global expansion wave.
+                        <br/><span class="text-white font-bold uppercase tracking-widest text-sm mt-6 block">Zero Inventory • Zero Risks • Zero Excuses</span>
+</p>
+<div class="flex flex-col items-center gap-6">
+<a class="w-full sm:w-auto px-16 py-6 bg-primary text-white rounded-full font-bold text-2xl shadow-2xl shadow-primary/40 hover:bg-primary/90 transition-all hover:scale-105 active:scale-95" href="#">Start Your Journey Now</a>
+<p class="text-white/40 italic font-medium tracking-wide">THE BEST ISN'T COMING... IT'S ALREADY HERE.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Success Stories -->
+<section class="py-24 md:py-32 bg-surface-container">
+<div class="max-w-7xl mx-auto px-6 md:px-12">
+<div class="text-center mb-16 md:mb-24 reveal">
+<h3 class="text-primary font-bold tracking-[0.4em] uppercase text-[11px] mb-6">Success Stories</h3>
+<h2 class="font-display text-4xl md:text-5xl font-bold text-on-surface">Voices of Sovereignty</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Testimonial 1 -->
+<div class="bg-white p-10 rounded-[2.5rem] premium-shadow border border-black/[0.03] flex flex-col h-full reveal">
+<span class="material-symbols-outlined text-primary text-5xl mb-8">format_quote</span>
+<p class="text-on-surface-variant text-lg italic mb-12 flex-grow leading-relaxed">
+                        "Rich &amp; Well isn't just a business; it's a frequency shift. My life transformed from struggle to sovereignty within months."
+                    </p>
+<div class="flex items-center gap-5 pt-8 border-t border-outline">
+<img class="w-14 h-14 rounded-full border-2 border-primary/20 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfAUsza7GccUTdMDki3EEKWRds9PWVQKz9HGre8KRzhbfDBYNhlNpIKbqNBbFbKtgC0Q6-L8yspxdSisbxy6N9aAeoYsM9w3eyLIJc6OE0b2rud3ah1GxKPRTl5sN7I-dDtKSqHUBWjRg2Aei1qs_Y5fUkLKd1dwSz34vZURrlHoQOkid_ZvRWmPELWJascKbaBR9ydUNaRRHbh0OPL1MGYVwPyUC0pal0wKVbt_BH4j4wVvnfcj4u8kduE_ebIeDwyNjhNtg4kDsl"/>
+<div>
+<h4 class="font-bold text-on-surface text-lg">Edah Solomon</h4>
+<p class="text-[10px] font-bold text-primary uppercase tracking-widest">Diamond Director</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-primary p-10 rounded-[2.5rem] shadow-2xl shadow-primary/20 flex flex-col h-full text-white reveal" style="transition-delay: 100ms;">
+<span class="material-symbols-outlined text-white/30 text-5xl mb-8">format_quote</span>
+<p class="text-white/90 text-lg italic mb-12 flex-grow leading-relaxed">
+                        "The payout structure is revolutionary. I've never seen a system so aligned with the success of its members."
+                    </p>
+<div class="flex items-center gap-5 pt-8 border-t border-white/10">
+<img class="w-14 h-14 rounded-full border-2 border-white/30 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADx942ab18VvGg2VSaYMRkuJRCTYU6b91iVT5FeqyM3vLapUyPlKwNTWTrPPwA92DDysDiWltIe8OIBvgnq8m6S5xZWd-HJUeIwBYhwphj4IPZn70aYkUnqS9xtKGvM8K3UO2CDZ9AoCNAJ9jrWrtP4hqA0jX06ntSytc_qB3TuO3N2ZlObwDWv5b9JiUbchji1nTlUYeCyJVa44h82yB0jQWovr5hMoo9vH5RmItvyoMLr7xAG7m06-AmGoR33LI18nGWOpIkXog4"/>
+<div>
+<h4 class="font-bold text-white text-lg">Joy Thomas</h4>
+<p class="text-[10px] font-bold text-white/70 uppercase tracking-widest">Founding Member</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-white p-10 rounded-[2.5rem] premium-shadow border border-black/[0.03] flex flex-col h-full reveal" style="transition-delay: 200ms;">
+<span class="material-symbols-outlined text-primary text-5xl mb-8">format_quote</span>
+<p class="text-on-surface-variant text-lg italic mb-12 flex-grow leading-relaxed">
+                        "We are expanding into 40+ countries this year. The wellness tech is our anchor; the opportunity is our engine."
+                    </p>
+<div class="flex items-center gap-5 pt-8 border-t border-outline">
+<img class="w-14 h-14 rounded-full border-2 border-primary/20 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLVcEkPZ0NnG7NnruHc902SVAFBmN6UEhkkl9wWZpu5NQmPhcoHtQ4yUy_tWE2BvkH_mNuUQQ2FdymtRmXE1NIYP0Si8RQUpVOW2hWNjG8qM1htQJqz9FcQ_aQK7MqF-FXjt5rBYqGdi0ZdOcBrV_QnJlINzHLQOM6--wJvqfz7-eFrF9z5FhEepoYVB_bspvXzr8erRNbPi7z2m7cdW9652nA5_gGC4-3CgJ3PyAxCH5pXgZkyCx0kNS3z5SQ-DomZJRVtDpgDbwi"/>
+<div>
+<h4 class="font-bold text-on-surface text-lg">Chukwudi Okafor</h4>
+<p class="text-[10px] font-bold text-primary uppercase tracking-widest">Expansion Lead</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-white py-16 border-t border-black/[0.03]">
+<div class="max-w-7xl mx-auto px-6 md:px-12">
+<div class="flex flex-col md:flex-row justify-between items-start gap-12 mb-16">
+<div class="max-w-xs">
+<div class="flex items-center gap-3 mb-6">
+<img alt="Logo" class="h-8 w-auto" src="https://lh3.googleusercontent.com/aida/ADBb0ui9MhtVIZEujCeu4Pu5noOB5TYeJudGVrTGRqzmQ98zXSsYOmThaI4CB1myU2bT4NUVDD2E7pAsXIxYQ7EMRjHpyX-i1ayii4iR-YykPY7mmb8cfNmXON7z6gJC-KkYLoAp8Af4gJfJBWtbRLKv4-c0ysgHyI46y-CT2yENEOOUHFA-j--uTxutHTN1zpQ_r0fLZXnvxJYwX0PSWptAuzMiUBzugTEiad6I6iFkotVogU_w9TRz1NhP_EE"/>
+<span class="font-display font-bold text-2xl tracking-tight">Rich &amp; Well</span>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                    Redefining wealth and wellness through a sovereign digital ecosystem. High-Technology Wellness &amp; Economic Empowerment.
+                </p>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-12">
+<div>
+<h6 class="font-bold text-xs uppercase tracking-widest text-primary mb-6">Ecosystem</h6>
+<ul class="space-y-4">
+<li><a class="text-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Frequency Healing</a></li>
+<li><a class="text-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Sovereign Wealth</a></li>
+<li><a class="text-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Product Suite</a></li>
+</ul>
+</div>
+<div>
+<h6 class="font-bold text-xs uppercase tracking-widest text-primary mb-6">Support</h6>
+<ul class="space-y-4">
+<li><a class="text-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="text-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Contact Support</a></li>
+</ul>
+</div>
+<div class="hidden sm:block">
+<h6 class="font-bold text-xs uppercase tracking-widest text-primary mb-6">Connect</h6>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-primary/5 transition-all" href="#"><span class="material-symbols-outlined text-xl">share</span></a>
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-primary/5 transition-all" href="#"><span class="material-symbols-outlined text-xl">mail</span></a>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-black/[0.03] text-center">
+<p class="text-tertiary text-[11px] font-medium tracking-widest uppercase">© 2024 Rich &amp; Well Ecosystem. Designed for global impact.</p>
+</div>
+</div>
+</footer>
+<script>
+    // Entrance Animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+
+    menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('open');
+        menuIcon.textContent = mobileMenu.classList.contains('open') ? 'close' : 'menu';
+        document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    });
+
+    // Close mobile menu when a mobile nav link is clicked
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (mobileMenu.classList.contains('open')) {
+                mobileMenu.classList.remove('open');
+                menuIcon.textContent = 'menu';
+                document.body.style.overflow = '';
+            }
+        });
+    });
+
+    // Glass Navbar Scroll Effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 20) {
+            navbar.classList.add('shadow-sm');
+        } else {
+            navbar.classList.remove('shadow-sm');
+        }
+    });
+</script>
+</body></html>

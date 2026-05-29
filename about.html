@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us | Rich &amp; Well</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#0056D2",
+                    "primary-hover": "#0045a8",
+                    "surface": "#ffffff",
+                    "background": "#f8f9fa",
+                    "on-surface": "#131313",
+                    "on-surface-variant": "#475569",
+                    "border-light": "#E2E8F0",
+                    "gold-accent": "#D4AF37",
+                    "surface-container-lowest": "#fcfcfc"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "unit": "8px",
+                    "container-max": "1280px",
+                    "margin-mobile": "20px",
+                    "section-padding": "clamp(64px, 10vw, 128px)",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "display": ["Hanken Grotesk", "sans-serif"],
+                    "body": ["Inter", "sans-serif"]
+            },
+            "fontSize": {
+                    "display-lg": ["clamp(40px, 8vw, 64px)", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["clamp(24px, 5vw, 32px)", {"lineHeight": "1.3", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "body-lg": ["clamp(16px, 2vw, 18px)", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #f8f9fa;
+            color: #131313;
+            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .apple-card {
+            background: #ffffff;
+            border: 1px solid #E2E8F0;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .apple-card:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            transform: translateY(-8px);
+        }
+        
+        #mobile-menu {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        #mobile-menu.hidden-menu {
+            transform: translateX(100%);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .active .stagger-item {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #lang-dropdown { display: none; }
+        #lang-selector:focus-within #lang-dropdown { display: block; }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="antialiased">
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50 glass-nav border-b border-border-light shadow-sm" id="main-nav">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 md:h-20 flex items-center justify-between">
+<div class="flex items-center gap-2 flex-shrink-0">
+<img alt="Rich &amp; Well Logo" class="h-8 md:h-10 w-auto" src="https://lh3.googleusercontent.com/aida/ADBb0ui9MhtVIZEujCeu4Pu5noOB5TYeJudGVrTGRqzmQ98zXSsYOmThaI4CB1myU2bT4NUVDD2E7pAsXIxYQ7EMRjHpyX-i1ayii4iR-YykPY7mmb8cfNmXON7z6gJC-KkYLoAp8Af4gJfJBWtbRLKv4-c0ysgHyI46y-CT2yENEOOUHFA-j--uTxutHTN1zpQ_r0fLZXnvxJYwX0PSWptAuzMiUBzugTEiad6I6iFkotVogU_w9TRz1NhP_EE"/>
+<span class="font-display font-bold text-lg md:text-xl hidden lg:inline-block text-on-surface">Rich &amp; Well</span>
+</div>
+<!-- Desktop Navigation Items -->
+<div class="hidden xl:flex items-center gap-6">
+<a class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap" href="index.html">Home</a>
+<a class="text-sm font-semibold text-primary whitespace-nowrap" href="about.html">About Us</a>
+<a class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap" href="services.html">Services</a>
+<a class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap" href="product-suite.html">Product Suite</a>
+<a class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap" href="blog.html">Blog</a>
+<a class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap" href="business-opportunity.html">Business Opportunity</a>
+<a class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap" href="contact.html">Contact Us</a>
+</div>
+<!-- Action Items -->
+<div class="hidden lg:flex items-center gap-4">
+<div class="relative group" id="lang-selector">
+<button class="flex items-center gap-1 text-xs font-bold text-on-surface-variant cursor-pointer border border-border-light px-2 py-1.5 rounded hover:bg-black/5 transition-colors">
+<span class="material-symbols-outlined text-base">language</span> EN
+                </button>
+<div class="absolute top-full right-0 mt-2 w-32 bg-white border border-border-light rounded-lg shadow-xl py-2 group-hover:block" id="lang-dropdown">
+<a class="block px-4 py-2 text-xs text-on-surface hover:bg-slate-50" href="#" onclick="event.preventDefault()">English</a>
+<a class="block px-4 py-2 text-xs text-on-surface hover:bg-slate-50" href="#" onclick="event.preventDefault()">Français</a>
+<a class="block px-4 py-2 text-xs text-on-surface hover:bg-slate-50" href="#" onclick="event.preventDefault()">Hausa</a>
+</div>
+</div>
+<a class="text-sm font-semibold text-on-surface-variant hover:text-primary px-3 py-2 transition-colors" href="login.html">Login</a>
+<a class="px-5 py-2.5 bg-primary text-white rounded-full text-sm font-bold hover:bg-primary-hover transition-all shadow-sm" href="signup.html">Get Started</a>
+</div>
+<!-- Mobile Toggle -->
+<button aria-label="Menu" class="xl:hidden p-2 text-on-surface" id="mobile-toggle">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</nav>
+<!-- Mobile Menu Overlay -->
+<div class="fixed inset-0 z-[60] bg-white hidden-menu flex flex-col p-6 overflow-y-auto" id="mobile-menu">
+<div class="flex justify-between items-center mb-10">
+<span class="font-display font-bold text-xl">Rich &amp; Well</span>
+<button class="p-2" id="mobile-close"><span class="material-symbols-outlined text-3xl">close</span></button>
+</div>
+<div class="flex flex-col gap-6 text-xl font-semibold">
+<a class="hover:text-primary transition-colors" href="index.html">Home</a>
+<a class="text-primary" href="about.html">About Us</a>
+<a class="hover:text-primary transition-colors" href="services.html">Services</a>
+<a class="hover:text-primary transition-colors" href="product-suite.html">Product Suite</a>
+<a class="hover:text-primary transition-colors" href="blog.html">Blog</a>
+<a class="hover:text-primary transition-colors" href="business-opportunity.html">Business Opportunity</a>
+<a class="hover:text-primary transition-colors" href="contact.html">Contact Us</a>
+<hr class="border-border-light my-2"/>
+<div class="flex items-center justify-between py-2 text-sm text-on-surface-variant font-bold">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined">language</span> Language
+            </div>
+<select class="bg-transparent border-none focus:ring-0 text-primary">
+<option>English (EN)</option>
+<option>Français (FR)</option>
+</select>
+</div>
+<a class="text-center py-4 border border-border-light rounded-2xl text-lg hover:bg-slate-50 transition-colors" href="login.html">Login</a>
+<a class="text-center py-4 bg-primary text-white rounded-2xl text-lg font-bold shadow-lg" href="signup.html">Get Started</a>
+</div>
+</div>
+<main class="mt-16 md:mt-20">
+<!-- Hero Section -->
+<section class="relative py-section-padding px-4 sm:px-6 max-w-7xl mx-auto overflow-hidden">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="space-y-8">
+<span class="text-xs font-bold text-primary tracking-[0.2em] uppercase block">Global Wellness Hub</span>
+<h1 class="font-display text-display-lg text-on-surface leading-tight">
+                    About <span class="text-primary italic">Rich &amp; Well</span>
+</h1>
+<p class="font-display text-headline-md text-primary font-medium italic opacity-80">
+                    Holistic Drug-Less Health &amp; Wellness Advocates
+                </p>
+<p class="text-body-lg text-on-surface-variant max-w-xl">
+                    Empowering Diaspora and Indigenous African families with wealth and wellness by turning health challenges into wealth opportunities through industrial-grade economic engines.
+                </p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<img alt="Team member" class="apple-card rounded-lg aspect-square object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFwtwZf-kzzOli-dquk570T_2AIYLv4wQKqiuGFnerPrZcwUyJ0l0zU-EYoIOZe_of96klu709uZXHpM8je_Uyq1fb0mW5kfo4j0XH1Moo-eZPNA6aA_G7diN0v7v3fYLqRIrq5nDcD2W0e98TizQk9vYe-NJS8-k2Wnafo47QDCn1XzQcZ_OThy2mn6HGuNHtgk7N6zbQp82VtOzu_THUbn7_ILIMUDwtURA51e9_3YX2u_nHov0bYqKsbhNnfldYKpwizGcEXsZW"/>
+<img alt="Team member" class="apple-card rounded-lg aspect-square object-cover mt-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCN7tzwl6aDBv7eU_5bxZu3Rw8TnZUT2QOOXrNU8e-CM8Cu-jkxRG5Dem5XbUXY56oOPqJtL_K0AJAsdEvHOnNta0kSZFnWQjoFurSCzH7FU2_vDMo5DdBN8LWkCxWnfcKPFiwi-aQGyFoFEEOF6xtejtbr7Eyp3Uk5-TctcifLd9uM8VvmRglb8W8XUp4armRCgACkqQ3W4gsKj2FSRjFDDGP551sje4aaf1irlrg-yn7zeFLE2KWc_pj4pET6eBjXw-eBzZ4yQlgN"/>
+<img alt="Team member" class="apple-card rounded-lg aspect-square object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCH4S0IBTCbJ5Wn9dp869I4T9jYSF3YtsJtxh7GaKt7eHWLXnytG8x9OOZqFkaOh0EWrDk0hyoUlO0YFDybuxojicz2DCWbUxCwwDBWxxubqVbBEZTz3xmvjphjT6slxPvxxT9UuUplKuBs4J8zfebKwykGkP004nxuQM8KupqEwWlYyuDGnF05qKXpeUtxv-KC-ab88WTKu4AWsXDmECkkpvGXsnJMVZIijgzJsHdVjzrC4eBEbPZwbe2DI8n19_75BLQGg995I-7W"/>
+<img alt="Team member" class="apple-card rounded-lg aspect-square object-cover mt-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5yMWXry4-3bNJPE7ltow1yZPlT6JttaYCBWcJmRkcFwiH26Mc9UP7k5faw7O0Yggkhcw88M6QALiyVKol7zKhjEIEbK-R8l2ydHD6h0z1I3Nc-b5j_-_rru4XiK6He3iuTgkMlMcy3KHyRXOnC6b34LrxEShjWJurJYwfMgUqtr0ULN42WNB-gjL5xZZEjbXWdTa-UMHKZeI8N-0-7uJqaEyJJ5Q8rknZW1GNecyQyKHRhGkcl__5menJLeip7Aueciro5AowQZ6U"/>
+</div>
+</div>
+</section>
+<!-- About Content Section -->
+<section class="py-section-padding bg-white border-y border-border-light">
+<div class="max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-8">
+<h2 class="font-display text-headline-md text-on-surface">About Rich &amp; Well</h2>
+<p class="text-body-lg text-on-surface-variant font-medium leading-relaxed">
+                Empowering Diaspora and Indigenous African Families with Wealth and Wellness by Turning Health Challenges Into Wealth Opportunities.
+            </p>
+</div>
+</section>
+<!-- What Drives Us -->
+<section class="reveal py-section-padding bg-slate-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6">
+<div class="text-center mb-16 space-y-4">
+<span class="text-xs font-bold text-primary tracking-[0.3em] uppercase block stagger-item">Core Strength</span>
+<h2 class="font-display text-headline-md text-on-surface uppercase tracking-widest stagger-item">What Drives Us</h2>
+<p class="text-body-lg text-on-surface-variant max-w-3xl mx-auto stagger-item">
+                    Rich &amp; Well is Driven by an Excellent Management Team, Industry Leaders, Passionate Visionaries and Innovators with Proven Track Record, Wide Experience and Expertise in Health, Finance and Network Marketing.
+                </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="apple-card rounded-lg p-8 space-y-6 stagger-item">
+<div class="w-12 h-12 bg-primary/5 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">stars</span>
+</div>
+<h3 class="font-display text-xl font-bold text-on-surface">Expertise</h3>
+<p class="text-on-surface-variant">Unmatched experience in global health and financial systems.</p>
+</div>
+<div class="apple-card rounded-lg p-8 space-y-6 stagger-item">
+<div class="w-12 h-12 bg-primary/5 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">lightbulb</span>
+</div>
+<h3 class="font-display text-xl font-bold text-on-surface">Innovation</h3>
+<p class="text-on-surface-variant">Developing pioneering solutions for holistic wellness.</p>
+</div>
+<div class="apple-card rounded-lg p-8 space-y-6 stagger-item">
+<div class="w-12 h-12 bg-primary/5 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">handshake</span>
+</div>
+<h3 class="font-display text-xl font-bold text-on-surface">Support</h3>
+<p class="text-on-surface-variant">Comprehensive corporate backing for every member of our ecosystem.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Values -->
+<section class="reveal py-section-padding bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6">
+<div class="text-center mb-20 space-y-4">
+<span class="text-xs font-bold text-primary tracking-[0.3em] uppercase block stagger-item">Our Philosophy</span>
+<h2 class="font-display text-display-lg text-on-surface stagger-item">The values we live by</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="p-8 border-l-4 border-primary bg-slate-50 rounded-r-lg space-y-4 stagger-item">
+<h3 class="font-display text-2xl font-bold text-on-surface">Impactful Mission</h3>
+<p class="text-on-surface-variant">"We're not just selling products, we're building a movement for positive change."</p>
+</div>
+<div class="p-8 border-l-4 border-primary bg-slate-50 rounded-r-lg space-y-4 stagger-item">
+<h3 class="font-display text-2xl font-bold text-on-surface">Sustainable Growth</h3>
+<p class="text-on-surface-variant">"Our network marketing model creates a win-win for everyone involved."</p>
+</div>
+<div class="p-8 border-l-4 border-primary bg-slate-50 rounded-r-lg space-y-4 stagger-item">
+<h3 class="font-display text-2xl font-bold text-on-surface">Proven Success</h3>
+<p class="text-on-surface-variant">"Our team has a track record of success in health and financial empowerment."</p>
+</div>
+</div>
+<div class="mt-16 p-8 md:p-12 bg-primary/5 rounded-3xl border border-primary/10 stagger-item">
+<h4 class="font-display text-2xl font-bold text-primary mb-4">Our Vision</h4>
+<p class="text-body-lg text-on-surface-variant italic leading-relaxed">
+                    "To Create a Community where Everyone has the Opportunity to live a Rich &amp; Well Lifestyle, characterized by Optimal Health, Financial Security, Personal Fulfillment, Generosity and Strong Connected Relationships."
+                </p>
+</div>
+</div>
+</section>
+<!-- Our Mission -->
+<section class="reveal py-section-padding bg-slate-50 border-t border-border-light overflow-hidden">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="space-y-8">
+<span class="text-xs font-bold text-primary tracking-[0.2em] uppercase block stagger-item">Why Choose Us</span>
+<h2 class="font-display text-headline-md text-on-surface stagger-item">Our Mission</h2>
+<p class="text-body-lg text-primary font-semibold stagger-item">
+                    To revolutionize network marketing through innovative wellness solutions and sustainable wealth opportunities.
+                </p>
+<div class="flex flex-wrap gap-4 stagger-item">
+<div class="px-6 py-4 bg-white rounded-2xl border border-border-light flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">verified</span>
+<span class="font-bold text-sm tracking-wide uppercase">Experience</span>
+</div>
+<div class="px-6 py-4 bg-white rounded-2xl border border-border-light flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">payments</span>
+<span class="font-bold text-sm tracking-wide uppercase">Profitable</span>
+</div>
+<div class="px-6 py-4 bg-white rounded-2xl border border-border-light flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">eco</span>
+<span class="font-bold text-sm tracking-wide uppercase">Sustainable</span>
+</div>
+</div>
+</div>
+<div class="rounded-3xl overflow-hidden apple-card stagger-item">
+<img alt="Professional wellness environment" class="w-full h-[400px] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYrgZFUXGS14Bq0sQ64O2OFIApE3msohZLkJc_Py3NCWrXcpw5hhIpdamHTyA_ugPHuZsXgryZw7n7Aqvplkjk6bsYAm4amkDWnaPH1QsjaJaQaV71W-SAneqtqO3hvMada6ph65q4HITSdsj8-8hpX8_QhZVpYH7jqUR1ti3HKu694KYl5pTPFlpV1mEw9i_3qP-IlS2l77Ih-bxMnv3Eqhpozope2gyen_2k0ZLAr3kcLNmuFHP1sOt3dq9B8YbKyF8juPrqLknE"/>
+</div>
+</div>
+</section>
+<!-- Get In Touch -->
+<section class="reveal py-section-padding bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6">
+<div class="text-center mb-16 space-y-4">
+<span class="text-xs font-bold text-primary tracking-[0.2em] uppercase block stagger-item">Connectivity</span>
+<h2 class="font-display text-headline-md text-on-surface uppercase tracking-widest stagger-item">Get In Touch</h2>
+<p class="text-on-surface-variant stagger-item">We're here to support your journey to sovereignty.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="apple-card rounded-lg p-10 text-center space-y-6 stagger-item">
+<div class="w-16 h-16 bg-primary/5 rounded-full flex items-center justify-center mx-auto">
+<span class="material-symbols-outlined text-primary text-3xl">location_on</span>
+</div>
+<h3 class="font-display text-xl font-bold text-on-surface">Locate Us</h3>
+<p class="text-on-surface-variant">108, New Lagos Road (2nd Floor),<br/>By Akugbe Junction, Benin City,<br/>Edo State, Nigeria.</p>
+</div>
+<div class="apple-card rounded-lg p-10 text-center space-y-6 stagger-item">
+<div class="w-16 h-16 bg-primary/5 rounded-full flex items-center justify-center mx-auto">
+<span class="material-symbols-outlined text-primary text-3xl">call</span>
+</div>
+<h3 class="font-display text-xl font-bold text-on-surface">Call Us</h3>
+<p class="text-on-surface-variant">Hotline: +234 807 713 6110<br/>Whatsapp: +234 813 246 9273</p>
+</div>
+<div class="apple-card rounded-lg p-10 text-center space-y-6 stagger-item">
+<div class="w-16 h-16 bg-primary/5 rounded-full flex items-center justify-center mx-auto">
+<span class="material-symbols-outlined text-primary text-3xl">mail</span>
+</div>
+<h3 class="font-display text-xl font-bold text-on-surface">Email Us</h3>
+<p class="text-on-surface-variant">Info@Richandwell-lifestyle.space</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-white border-t border-border-light py-12 md:py-20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6">
+<div class="flex flex-col md:flex-row justify-between items-center gap-10">
+<div class="flex items-center gap-3">
+<img alt="Logo" class="h-8 md:h-10" src="https://lh3.googleusercontent.com/aida/ADBb0ui9MhtVIZEujCeu4Pu5noOB5TYeJudGVrTGRqzmQ98zXSsYOmThaI4CB1myU2bT4NUVDD2E7pAsXIxYQ7EMRjHpyX-i1ayii4iR-YykPY7mmb8cfNmXON7z6gJC-KkYLoAp8Af4gJfJBWtbRLKv4-c0ysgHyI46y-CT2yENEOOUHFA-j--uTxutHTN1zpQ_r0fLZXnvxJYwX0PSWptAuzMiUBzugTEiad6I6iFkotVogU_w9TRz1NhP_EE"/>
+<span class="font-display font-bold text-xl md:text-2xl text-on-surface">Rich &amp; Well</span>
+</div>
+<p class="text-xs md:text-sm text-on-surface-variant text-center order-3 md:order-none">© 2024 Rich &amp; Well Ecosystem. All rights reserved.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 md:w-12 md:h-12 border border-border-light rounded-full flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all text-on-surface-variant" href="#"><span class="material-symbols-outlined text-sm md:text-base">public</span></a>
+<a class="w-10 h-10 md:w-12 md:h-12 border border-border-light rounded-full flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all text-on-surface-variant" href="#"><span class="material-symbols-outlined text-sm md:text-base">alternate_email</span></a>
+<a class="w-10 h-10 md:w-12 md:h-12 border border-border-light rounded-full flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all text-on-surface-variant" href="#"><span class="material-symbols-outlined text-sm md:text-base">share</span></a>
+</div>
+</div>
+</div>
+</footer>
+<!-- Back to Top -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform z-50 opacity-0 pointer-events-none translate-y-10" id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+<span class="material-symbols-outlined">arrow_upward</span>
+</button>
+<script>
+    // Navigation Toggles
+    const toggle = document.getElementById('mobile-toggle');
+    const close = document.getElementById('mobile-close');
+    const menu = document.getElementById('mobile-menu');
+
+    toggle.onclick = () => {
+        menu.classList.remove('hidden-menu');
+    };
+    close.onclick = () => {
+        menu.classList.add('hidden-menu');
+    };
+
+    // Close mobile menu on link click (so mobile nav links navigate correctly)
+    if (menu) {
+        menu.querySelectorAll('a').forEach(link => {
+            link.onclick = () => {
+                menu.classList.add('hidden-menu');
+            };
+        });
+    }
+
+    // Scroll Effects
+    window.addEventListener('scroll', () => {
+        const btt = document.getElementById('backToTop');
+        if (window.scrollY > 300) {
+            btt.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-10');
+            btt.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+        } else {
+            btt.classList.add('opacity-0', 'pointer-events-none', 'translate-y-10');
+            btt.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+        }
+    });
+
+    // Reveal-on-scroll
+    const observerOptions = {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+</script>
+</body></html>

@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+
+<html class="light scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Product Suite | Rich &amp; Well - Frequency Healing &amp; Sovereignty</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#0066CC",
+                        "secondary": "#2E7D32",
+                        "background": "#FFFFFF",
+                        "surface": "#FDFDFD",
+                        "surface-container": "#F8FAFC",
+                        "on-surface": "#0F172A",
+                        "on-surface-variant": "#64748B",
+                        "outline": "#E2E8F0",
+                        "tertiary": "#94A3B8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "1.5rem",
+                        "xl": "2.5rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "display": ["Hanken Grotesk", "sans-serif"],
+                        "body": ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #FFFFFF; color: #0F172A; }
+        h1, h2, h3, h4, .font-display { font-family: 'Hanken Grotesk', sans-serif; }
+        
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .premium-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .premium-shadow:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+            transform: translateY(-4px);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #0066CC 0%, #004499 100%);
+          background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Mobile Menu */
+        #mobile-menu {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            pointer-events: none;
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        #mobile-menu.open {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface selection:bg-primary/10 overflow-x-hidden">
+<!-- Navigation (Synchronized with SCREEN_40) -->
+<nav class="fixed top-0 w-full z-[100] border-b border-black/[0.03] glass-nav" id="navbar">
+<div class="flex justify-between items-center h-16 md:h-20 px-6 md:px-12 max-w-screen-2xl mx-auto">
+<a class="flex items-center gap-2.5 shrink-0 group" href="#">
+<img alt="Rich &amp; Well Logo" class="h-7 md:h-9 w-auto" src="https://lh3.googleusercontent.com/aida/ADBb0ui9MhtVIZEujCeu4Pu5noOB5TYeJudGVrTGRqzmQ98zXSsYOmThaI4CB1myU2bT4NUVDD2E7pAsXIxYQ7EMRjHpyX-i1ayii4iR-YykPY7mmb8cfNmXON7z6gJC-KkYLoAp8Af4gJfJBWtbRLKv4-c0ysgHyI46y-CT2yENEOOUHFA-j--uTxutHTN1zpQ_r0fLZXnvxJYwX0PSWptAuzMiUBzugTEiad6I6iFkotVogU_w9TRz1NhP_EE"/>
+<span class="font-display text-lg md:text-xl font-bold tracking-tight text-on-surface">Rich &amp; Well</span>
+</a>
+<!-- Desktop Menu -->
+<div class="hidden xl:flex items-center gap-1">
+<a class="px-4 py-2 text-[13px] font-medium text-on-surface-variant hover:text-primary transition-colors" href="index.html">Home</a>
+<a class="px-4 py-2 text-[13px] font-medium text-on-surface-variant hover:text-primary transition-colors" href="about.html">About Us</a>
+<a class="px-4 py-2 text-[13px] font-medium text-on-surface-variant hover:text-primary transition-colors" href="services.html">Services</a>
+<a class="px-4 py-2 text-[13px] font-bold text-primary transition-colors border-b-2 border-primary" href="product-suite.html">Product Suite</a>
+<a class="px-4 py-2 text-[13px] font-medium text-on-surface-variant hover:text-primary transition-colors" href="blog.html">Blog</a>
+<a class="px-4 py-2 text-[13px] font-medium text-on-surface-variant hover:text-primary transition-colors" href="business-opportunity.html">Business Opportunity</a>
+<a class="px-4 py-2 text-[13px] font-medium text-on-surface-variant hover:text-primary transition-colors" href="contact.html">Contact Us</a>
+</div>
+<div class="hidden lg:flex items-center gap-4">
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full hover:bg-black/5 cursor-pointer transition-colors group">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant group-hover:text-primary">language</span>
+<span class="text-[12px] font-bold text-on-surface-variant group-hover:text-primary">EN</span>
+</div>
+<a class="text-[13px] font-semibold text-on-surface px-4 py-2 hover:bg-black/5 rounded-full transition-colors" href="login.html">Login</a>
+<a class="bg-primary text-white text-[13px] font-bold px-6 py-2.5 rounded-full shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all active:scale-95" href="signup.html">Get Started</a>
+</div>
+<button class="xl:hidden p-2 text-on-surface hover:bg-black/5 rounded-full transition-colors" id="menu-toggle">
+<span class="material-symbols-outlined text-2xl" id="menu-icon">menu</span>
+</button>
+</div>
+<!-- Mobile Navigation -->
+<div class="absolute top-full left-0 w-full bg-white border-b border-outline px-6 py-8 xl:hidden shadow-2xl" id="mobile-menu">
+<div class="flex flex-col gap-4">
+<a class="text-lg font-medium" href="index.html">Home</a>
+<a class="text-lg font-medium" href="about.html">About Us</a>
+<a class="text-lg font-medium" href="services.html">Services</a>
+<a class="text-lg font-medium text-primary font-bold" href="product-suite.html">Product Suite</a>
+<a class="text-lg font-medium" href="blog.html">Blog</a>
+<a class="text-lg font-medium" href="business-opportunity.html">Business Opportunity</a>
+<a class="text-lg font-medium" href="contact.html">Contact Us</a>
+<hr class="border-outline my-2"/>
+<div class="flex items-center justify-between">
+<a class="font-semibold text-primary" href="login.html">Login</a>
+<div class="flex items-center gap-1 font-bold">
+<span class="material-symbols-outlined text-lg">language</span> EN
+                </div>
+</div>
+<a class="w-full bg-primary text-white text-center font-bold py-4 rounded-xl" href="signup.html">Get Started</a>
+</div>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative pt-32 pb-24 md:pt-48 md:pb-32 bg-[#F8FAFC]">
+<div class="max-w-7xl mx-auto px-6 md:px-12 text-center reveal">
+<span class="inline-flex items-center px-4 py-1.5 mb-8 bg-primary/5 text-primary rounded-full text-[11px] font-bold uppercase tracking-[0.2em]">
+                The Sovereign Ecosystem
+            </span>
+<h1 class="font-display text-4xl md:text-6xl lg:text-[80px] font-extrabold mb-8 max-w-5xl mx-auto leading-[1.05] tracking-tight text-on-surface">
+                PRODUCT <span class="italic text-gradient">SUITE</span>
+</h1>
+<p class="font-body text-lg md:text-xl text-on-surface-variant max-w-2xl mx-auto mb-12 leading-relaxed">
+                Calibrated Frequency Devices. Engineered for healing. Redefining your wellness journey through industrial-grade economic empowerment and high-technology wellness.
+            </p>
+</div>
+<!-- Subtle Visual Background Detail -->
+<div class="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
+<div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2"></div>
+<div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-secondary/5 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2"></div>
+</div>
+</section>
+<!-- Hertz Blower Series -->
+<section class="py-24 md:py-32 bg-white">
+<div class="max-w-7xl mx-auto px-6 md:px-12">
+<div class="mb-16 reveal">
+<h2 class="font-display text-3xl md:text-4xl font-bold text-on-surface mb-4 uppercase tracking-tight">HERTZ BLOWER SERIES</h2>
+<p class="text-lg text-on-surface-variant">One Brand. Five Breakthroughs. Total Terahertz Mastery.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal">
+<!-- Infinity -->
+<div class="bg-surface-container rounded-[2.5rem] p-6 premium-shadow border border-black/[0.03] group">
+<div class="bg-white rounded-[2rem] aspect-square flex items-center justify-center p-8 mb-8 overflow-hidden">
+<img class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxQvtLn8sVuijjzRwFFkOQitjdZFEM4cVQrtTA-1IIBAIscVTkmzwhYNHSbkYCBfvdeSKNbTDKdYu5kmREpCUBhr-0xG2Rr6MhoCJoONAk6lUTNCfTaMWtKK82tGeENdf_og6pjx-VefgaSRvczBIG4IDZFLNwnnQcujTTOAQe0I1JYqUWhcTFdCtSp6Un4uVIWvLc8eu0JlHwJd9aHsw9zWL4OS00SC9buJOC8TNle0af9oCr8OOYnGkGimIYHH7lo-UjkrHXkKtf"/>
+</div>
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-display text-xl font-bold text-on-surface">Infinity (Touch Version)</h3>
+<span class="text-primary font-bold">₦800,000</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-8 leading-relaxed">Professional handheld PEMF + Terahertz device. Calibrated for elite frequency therapy and deep cellular resonance.</p>
+<button class="w-full py-4 bg-primary text-white rounded-full font-bold shadow-lg shadow-primary/10 hover:bg-primary/90 transition-all active:scale-95">Order Now</button>
+</div>
+<!-- IonSync -->
+<div class="bg-surface-container rounded-[2.5rem] p-6 premium-shadow border border-black/[0.03] group">
+<div class="bg-white rounded-[2rem] aspect-square flex items-center justify-center p-8 mb-8 overflow-hidden">
+<img class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHzF_kjkZ9dX5zOtf-pg0hze7KxJuqoi_xEhpWoV4V9PFxUfJctX30J0ur2PDpTuAH9RShWqrgoBFBcUEuWzPTnecchYQkUpmkiDZPJIv2MmYV7eAg337yB1EquGoW0q18upKdogJqxFlA7470GFs3bThb8KyEJSSiy_2GIPZkoj2wpKy70ofUFdrYA7N-Yf5W1dkvdE51JZGjtxHbMmiYDP7Za6H3b2jonN6GlBx38sNLXzoCkeGKOwlx0VfeAmJjisk3DzNoGLJX"/>
+</div>
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-display text-xl font-bold text-on-surface">IonSync</h3>
+<span class="text-primary font-bold">₦200,000</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-8 leading-relaxed">The Model of Soul Realism. Harnessing negative ion technology to restore biological balance and economic sovereignty.</p>
+<button class="w-full py-4 bg-primary text-white rounded-full font-bold shadow-lg shadow-primary/10 hover:bg-primary/90 transition-all active:scale-95">Order Now</button>
+</div>
+<!-- Polaris Vitalis -->
+<div class="bg-surface-container rounded-[2.5rem] p-6 premium-shadow border border-black/[0.03] group">
+<div class="bg-white rounded-[2rem] aspect-square flex items-center justify-center p-8 mb-8 overflow-hidden">
+<img class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQszcBTE5JN15tCBv6VyBabw6rqZpbG6CCW7UvaP4VQfWE3uiyCOWjPd_2aCHJFt2jcOAuRFji_WCjKYSbukF8FMRs36b2izyyeUtvRIapBvLSe4ZJkdwY_4QtpQNy84lWk_l8nk7BUqcUtTn-ylXJWH76rYzU-1ZE8EvQd0u70kl1k8sXHf6Ar2ccC3qfsstoiR1R2gS_16_0AJRTrExuceV8DhMV0pLvGVyV5F3gm3V7vCoBspDVS94miZeqZXXZpeAhRwy8vywM"/>
+</div>
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-display text-xl font-bold text-on-surface">Polaris Vitalis</h3>
+<span class="text-primary font-bold">₦528,000</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-8 leading-relaxed">Terahertz + Blue Light System. A revolutionary fusion of light-spectrum therapy and molecular frequency modulation.</p>
+<button class="w-full py-4 bg-primary text-white rounded-full font-bold shadow-lg shadow-primary/10 hover:bg-primary/90 transition-all active:scale-95">Order Now</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Pulsesole Feature -->
+<section class="py-24 md:py-32 bg-surface-container">
+<div class="max-w-7xl mx-auto px-6 md:px-12 reveal">
+<div class="bg-white rounded-[3rem] overflow-hidden flex flex-col lg:flex-row items-center border border-black/[0.03] premium-shadow">
+<div class="w-full lg:w-1/2 p-8 lg:p-12">
+<img class="rounded-2xl w-full object-cover shadow-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLcFXLcEVoJf3w77eG_NB-GoDgKwTz9BRvlMHbD5F8RGyztDgW_UoM1-V6bcXZoJlyl9II30wUHsOjizx7l0xGXLlgIpZHC_3DyW6gHBOgg6ipYMOww5gbFBRW6dCrh-HZb7ct7YypWPX4dp0FFpJWLVQUCbZgBcrx86vEn9Z-cASx6cjI45bbCSqr_9miNdOaIgwAbL5EVPauXeIdZMVuLMP_TXwGRNo_7BnShwKVDoTtdjdW9sLKBDaJ8-gTGFHJkETn4GDLTODm"/>
+</div>
+<div class="w-full lg:w-1/2 p-10 lg:p-20">
+<span class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-lg text-[11px] font-bold uppercase tracking-widest mb-6">PREMIUM MASSAGE TECHNOLOGY</span>
+<h2 class="font-display text-4xl md:text-5xl font-bold text-on-surface mb-6">PULSESOLE</h2>
+<p class="text-lg text-on-surface-variant mb-10 leading-relaxed">
+                        The ultimate PEMF + Terahertz Foot Massager. Engineered to revitalize your body's foundation through precision-pulsed electromagnetic fields and deep-tissue frequency penetration.
+                    </p>
+<div class="flex items-center gap-10 mb-12">
+<div>
+<span class="block text-primary font-bold text-3xl">₦592,000</span>
+<span class="text-on-surface-variant text-xs font-medium">Full Sovereign Price</span>
+</div>
+<div class="flex items-center gap-2 text-secondary font-bold">
+<span class="material-symbols-outlined">verified</span>
+<span>Medical Grade</span>
+</div>
+</div>
+<button class="bg-primary text-white px-10 py-5 rounded-full font-bold text-lg shadow-xl shadow-primary/20 hover:bg-primary/90 transition-all hover:-translate-y-1 active:scale-95">
+                        Secure Your Pulsesole Now
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Water Life Collection -->
+<section class="py-24 md:py-32 bg-white">
+<div class="max-w-7xl mx-auto px-6 md:px-12">
+<div class="text-center mb-16 reveal">
+<h2 class="font-display text-3xl md:text-4xl font-bold text-on-surface mb-4 uppercase tracking-widest">WATER LIFE COLLECTION</h2>
+<p class="text-lg text-on-surface-variant">Hydration Evolved. Hydration Redefined.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal">
+<!-- Water Item 1 -->
+<div class="bg-surface-container rounded-[2.5rem] p-6 text-center premium-shadow border border-black/[0.03]">
+<img class="w-full aspect-square object-cover rounded-[2rem] mb-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCr0Imh2dzRllKwPJQnyVxe1cP7FjBUJJeV06yi2eX2rNIuNe1O39zlslOaM6WAb9enyHx4-EaS1Sdpa99TJ3ZElA1me3nhlmXaLk5cgOCZb7HnLHPVIPDDEMeHHLd8hW50S4sWrOfhx3bWGAaOaRNMWxUO7z51HUuYzjVdLAkf-_CO3xspR6FpXvhCV1NygK3gNrRIE_DVfsFCqfxFsCdUfIBchCEtmaj7vENhXGp98TJCWXMvIKQvA9aofvHQS7CPd-a4GxlwokJs"/>
+<h3 class="font-display text-lg font-bold text-on-surface mb-2">Countertop Hydrogen Dispenser</h3>
+<p class="text-on-surface-variant text-sm mb-6 px-4">Ultra-pure hydrogen-rich water for cellular rejuvenation.</p>
+<div class="text-primary font-bold text-xl mb-8">₦352,000</div>
+<button class="w-full py-4 border border-outline hover:border-primary hover:text-primary rounded-full transition-all text-xs font-bold uppercase tracking-widest bg-white">Add to Suite</button>
+</div>
+<!-- Water Item 2 -->
+<div class="bg-surface-container rounded-[2.5rem] p-6 text-center premium-shadow border border-black/[0.03]">
+<img class="w-full aspect-square object-cover rounded-[2rem] mb-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFLFQs9gJNa7s08EdeYRusGzgMDeEorrV47zjnMB0sTObsIHY7rgTvtjpplW3RDXw_wUdEhkYnxYeCilTvccMdKHYJfj2fgOyoRtIqKvuGrRwW4DQZhWCjwfJqK6YB08bsun_Ew3vZebtRenQIoELOKsqQPSD-5qz2wya60JPRecHi0EK7o4Y62srQAOYI3UdKAxJDUlnuR1CoaVIi_TPiUjDg6GQEiI7iU-N_iVTLCPYPZhl5H_JrtlotGAA-HHW1Q0Ynaej0dqFl"/>
+<h3 class="font-display text-lg font-bold text-on-surface mb-2">Exergy Life (Terahertz)</h3>
+<p class="text-on-surface-variant text-sm mb-6 px-4">Structured water technology for enhanced bio-availability.</p>
+<div class="text-primary font-bold text-xl mb-8">₦440,000</div>
+<button class="w-full py-4 border border-outline hover:border-primary hover:text-primary rounded-full transition-all text-xs font-bold uppercase tracking-widest bg-white">Add to Suite</button>
+</div>
+<!-- Water Item 3 -->
+<div class="bg-surface-container rounded-[2.5rem] p-6 text-center premium-shadow border border-black/[0.03]">
+<img class="w-full aspect-square object-cover rounded-[2rem] mb-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxjtZE0tNgF91afiCUFOoAs_3Peyy4NPAeRYmr7eFcFLmVpNt4m7XwHbZzY3yjWmh4q5h064yzidIOmYzRatcSzchGORDhEgkwch2ydO04H9-vmDIcAnPbwzUEoRcCgvWe1IR3RiLM9alcLTrT2Klfsjuamghq5C2lXMOxrc4MXfZGLuuN10-pVlcBdxzOfPGe_wSJ7Zj0LaL_a5pef7Qj8PdPG84Cy-QMjf70U9CY-SxOGg9q1ZBcvQ1_wmc3dpGt7OfEJahSdDdy"/>
+<h3 class="font-display text-lg font-bold text-on-surface mb-2">SPEIMEN Hydrogen Bottle</h3>
+<p class="text-on-surface-variant text-sm mb-6 px-4">Elite hydration on the go with molecular hydrogen infusion.</p>
+<div class="text-primary font-bold text-xl mb-8">₦144,000</div>
+<button class="w-full py-4 border border-outline hover:border-primary hover:text-primary rounded-full transition-all text-xs font-bold uppercase tracking-widest bg-white">Add to Suite</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Advanced Frequency Tech -->
+<section class="py-24 md:py-32 bg-surface-container overflow-hidden">
+<div class="max-w-7xl mx-auto px-6 md:px-12">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="reveal">
+<h2 class="font-display text-3xl md:text-5xl font-bold text-on-surface mb-10 leading-tight uppercase tracking-tight">ADVANCED <br/>FREQUENCY TECH</h2>
+<div class="space-y-6">
+<div class="bg-white p-6 rounded-[2rem] flex items-center gap-6 border border-black/[0.03] premium-shadow">
+<div class="w-20 h-20 flex-shrink-0 bg-surface-container rounded-2xl overflow-hidden border border-outline">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAefkwi38cp-CypkVthqzut6gPvWX8HtPriePZ1XL0YTdpWUoUuoXyNyrIIEXoXrmx8Rk43k9JwHOnQ389kbA2iNnvOUYAZMFw327qnYb6MzQNfAVGnh_S61dEkWJaRwrhZyqo2jeGD2oeX3U4G2-8VoO2smN1I0kXZaETDhd5hCrWgotJGIHAWed4q_I3OGUprvCh9CbzbGemB2AIbzjPgXLVazpbk7QdbOkUrPN2lkbhGeg-fM8Cqs50RDijYg2OVZhM70A9GnBsH"/>
+</div>
+<div>
+<h3 class="text-lg font-bold text-on-surface">Air-Shield Pendant</h3>
+<p class="text-on-surface-variant text-sm mb-1 leading-relaxed">Personal aura protection and environmental shielding.</p>
+<span class="text-primary font-bold">₦124,000</span>
+</div>
+</div>
+<div class="bg-white p-6 rounded-[2rem] flex items-center gap-6 border border-black/[0.03] premium-shadow">
+<div class="w-20 h-20 flex-shrink-0 bg-surface-container rounded-2xl overflow-hidden border border-outline">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6fzVVqU6wMIA0tC-wrtGzTWQD39qrU7lkrdDz0nNsKg0qhor55Ro_jh3_njU-TfCQaptzT2ResU4kX2kjBiAh--KotsgvuEQLAASG6h6c6FmzkGG1uDv1mOC5xl7EDDtPapYMDK-g-Yi2lhGsiFdaK2nLirw2bxqSRWfzctmIWvgw_G2Zc8ATAKqoNifXPTy70jPxqcOmskiIxfCjmr4UWIvzak6GjR19eg64pQ229RFxkIX0_CF8m1mG2LGXuiI9JoDH7DFqNDMc"/>
+</div>
+<div>
+<h3 class="text-lg font-bold text-on-surface">Terahertz Egg</h3>
+<p class="text-on-surface-variant text-sm mb-1 leading-relaxed">Full-body harmonic resonance chamber technology.</p>
+<span class="text-primary font-bold">₦1,440,000</span>
+</div>
+</div>
+</div>
+</div>
+<div class="relative reveal" style="transition-delay: 200ms;">
+<img class="rounded-[2.5rem] shadow-2xl relative z-10 border border-outline" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmq4wDklJbgGVqxx0bY-II7Ld46MsPHvRNhTj3h1LItyw-sxw_Spn5XIFIKqDCSaqOyoHGwoDANT8JywPQrn6FQOaBPDctwet6M8GceSqSNHaXVXXUE_poj8kF5Q9k8XRAowPgi5r3GtgegSeHwlRrf6lf_R4sVsBzRuAHwtWfJBUWroY2TtQuK4ZL8ZyKrldh-kQf54PliIFFJ9Dxjvzp5n6F00H7bXXXGcYpRQgHO4xBFU9NSoaWN7_KmR5lOERVXayAwOhYrpTJ"/>
+<div class="absolute -top-10 -right-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl -z-10"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Professional Series -->
+<section class="py-24 md:py-32 bg-white">
+<div class="max-w-4xl mx-auto px-6 text-center reveal">
+<span class="inline-flex items-center px-4 py-1.5 mb-6 bg-primary/5 text-primary rounded-full text-[11px] font-bold uppercase tracking-[0.3em]">
+                FOR CLINICAL ENVIRONMENTS
+            </span>
+<h2 class="font-display text-3xl md:text-5xl font-extrabold text-on-surface mb-12 uppercase tracking-tight">PROFESSIONAL SERIES</h2>
+<div class="bg-surface-container rounded-[3.5rem] p-10 md:p-16 border border-black/[0.03] premium-shadow">
+<img class="w-full h-72 md:h-96 object-cover rounded-[2rem] mb-12 shadow-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtYrNlO5e0ywYI_Fi8-s6P6UkXM0-z4gFFTONVM5XnYjH8SlqdAJKcnKRy1JQJHXNaOZzC2Pr_fQv6cexmLDMRUJM5Qx2ufbQs-mWuIeP1udDjeKvRu6OrtvW-pbq_mU2yeT5tAHM8wWHV_lDA7ZIPWlOnOr9lUQBNBrpsl4kjmmHTN9swaxj0UyzjLB-iu0Wq9QmRgp7zXkiPPoc6tMAuIvO0eWGXzzFV1zqiEQ99_hv4QyWWC9mTeG27fhRP0HGwFZeCjtVKHew7"/>
+<h3 class="font-display text-2xl md:text-3xl font-bold text-on-surface mb-6">Terahertz Relieving Magnetic Wave</h3>
+<p class="text-on-surface-variant text-lg mb-10 leading-relaxed max-w-2xl mx-auto">
+                    The pinnacle of professional relief. A high-intensity magnetic-terahertz hybrid system designed for rapid recovery and deep-seated neurological wellness.
+                </p>
+<div class="text-primary font-bold text-4xl mb-12">₦2,600,000</div>
+<button class="bg-primary text-white px-12 py-5 rounded-full font-bold text-xl shadow-xl shadow-primary/20 hover:bg-primary/90 transition-all hover:-translate-y-1 active:scale-95">
+                    Consult Our Specialists
+                </button>
+</div>
+</div>
+</section>
+<!-- Daily Wellness -->
+<section class="py-24 md:py-32 bg-surface-container">
+<div class="max-w-7xl mx-auto px-6 md:px-12 text-center">
+<h2 class="font-display text-3xl md:text-4xl font-bold text-on-surface mb-16 uppercase tracking-widest reveal">DAILY WELLNESS</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
+<div class="bg-white p-8 rounded-[2rem] border border-black/[0.03] premium-shadow text-left">
+<h4 class="font-bold text-on-surface text-lg mb-2">Quantum Energy Spray</h4>
+<span class="text-primary font-bold block mb-4">₦14,400</span>
+<p class="text-on-surface-variant text-sm leading-relaxed">Mist-based frequency delivery for instant aura purification.</p>
+</div>
+<div class="bg-white p-8 rounded-[2rem] border border-black/[0.03] premium-shadow text-left">
+<h4 class="font-bold text-on-surface text-lg mb-2">Restore Necklace</h4>
+<span class="text-primary font-bold block mb-4">₦22,400</span>
+<p class="text-on-surface-variant text-sm leading-relaxed">Continuous harmonic support throughout your day.</p>
+</div>
+<div class="bg-white p-8 rounded-[2rem] border border-black/[0.03] premium-shadow text-left">
+<h4 class="font-bold text-on-surface text-lg mb-2">Sleep Aid</h4>
+<span class="text-primary font-bold block mb-4">₦14,400</span>
+<p class="text-on-surface-variant text-sm leading-relaxed">Delta-wave modulated assistance for profound rest.</p>
+</div>
+<div class="bg-white p-8 rounded-[2rem] border border-black/[0.03] premium-shadow text-left">
+<h4 class="font-bold text-on-surface text-lg mb-2">Terahertz Energy Patch</h4>
+<span class="text-primary font-bold block mb-4">₦14,400</span>
+<p class="text-on-surface-variant text-sm leading-relaxed">Localized frequency therapy for joint and muscle sovereignty.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Flagship & Essential Double Feature -->
+<section class="py-24 md:py-32 bg-white">
+<div class="max-w-7xl mx-auto px-6 md:px-12">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 reveal">
+<!-- Flagship -->
+<div class="bg-surface-container p-10 md:p-14 rounded-[3rem] border border-black/[0.03] flex flex-col justify-between premium-shadow">
+<div>
+<span class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-lg text-[10px] font-bold uppercase tracking-widest mb-6">FLAGSHIP PRODUCT</span>
+<h2 class="font-display text-2xl md:text-3xl font-bold text-on-surface mb-8">Bio-Trinity (B.E.S.T Multi-Frequency)</h2>
+<img class="rounded-2xl mb-10 w-full h-56 object-cover shadow-sm border border-outline" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxYwC6u5EeFTQE1KhCS9xid62WJgNUHZjax6WCUTJM-XNJvakMGuqwhdj9Pse349k1EL1KE4xBY_IBMBScWVdXyriG4nRXN8ynQOpXZCxhkP-gvqwUtfsyBcxn5WaeZ_hu28tOaoZKIii-bdwAI9YHYA8PkpTI2xxLEklI91wTRfAssGX1wQdal9dVrtvKCiI4MJAoCq-Fj6C2U1tXwGYPgh-pzqAn3Keqgs2JCE2V2jOmXSChHnAoTrtH2cCuodBcsWAXEPIkKrJI"/>
+<p class="text-on-surface-variant text-lg mb-12 leading-relaxed">The ultimate bio-energetics platform. Three technologies in one device for complete economic and biological transformation.</p>
+</div>
+<div class="flex justify-between items-center pt-8 border-t border-outline">
+<span class="text-on-surface font-bold text-2xl">₦2,400,000</span>
+<button class="bg-primary text-white px-8 py-3.5 rounded-full font-bold hover:bg-primary/90 transition-all hover:scale-105">Order Now</button>
+</div>
+</div>
+<!-- Essential -->
+<div class="bg-surface-container p-10 md:p-14 rounded-[3rem] border border-black/[0.03] flex flex-col justify-between premium-shadow">
+<div>
+<span class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-lg text-[10px] font-bold uppercase tracking-widest mb-6">ESSENTIAL PRODUCTS</span>
+<h2 class="font-display text-2xl md:text-3xl font-bold text-on-surface mb-8">Lenora Elite</h2>
+<img class="rounded-2xl mb-10 w-full h-56 object-cover shadow-sm border border-outline" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzUQG5U5zBV23-wfw-jN7t7yV7CMs2Sl_yXs-NN0qSvwVpMFC8MZ2DgJFKUmNYzHRzuXzORBRRp3Cj2MdxDkwFiP40hNYTm2NHUOo3Mr6J-qHgaxSmAHkHzEu1b6GWc9FKsmFPIXGGT_EaF3irAeWugG6uUacG2YGZ9POp_T7Ms6-d__teNP291ndq_0T6BM6ZZvSe71r4Q5bgC3gB9oYj05UEbo6L1Ovk5xeucM0s-Npu0QWkyUYj8WTzZh9B5giYWye6V0jpG-y0"/>
+<p class="text-on-surface-variant text-lg mb-12 leading-relaxed">Your daily wellness companion. An integrated environment for passive healing and frequency optimization.</p>
+</div>
+<div class="flex justify-between items-center pt-8 border-t border-outline">
+<span class="text-on-surface font-bold text-2xl">₦2,080,000</span>
+<button class="bg-primary text-white px-8 py-3.5 rounded-full font-bold hover:bg-primary/90 transition-all hover:scale-105">Order Now</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (Synchronized with SCREEN_40) -->
+<footer class="bg-white py-16 border-t border-black/[0.03]">
+<div class="max-w-7xl mx-auto px-6 md:px-12">
+<div class="flex flex-col md:flex-row justify-between items-center gap-12">
+<div class="flex items-center gap-3">
+<img alt="Logo" class="h-8 w-auto" src="https://lh3.googleusercontent.com/aida/ADBb0ui9MhtVIZEujCeu4Pu5noOB5TYeJudGVrTGRqzmQ98zXSsYOmThaI4CB1myU2bT4NUVDD2E7pAsXIxYQ7EMRjHpyX-i1ayii4iR-YykPY7mmb8cfNmXON7z6gJC-KkYLoAp8Af4gJfJBWtbRLKv4-c0ysgHyI46y-CT2yENEOOUHFA-j--uTxutHTN1zpQ_r0fLZXnvxJYwX0PSWptAuzMiUBzugTEiad6I6iFkotVogU_w9TRz1NhP_EE"/>
+<span class="font-display font-bold text-2xl tracking-tight">Rich &amp; Well</span>
+</div>
+<div class="flex flex-wrap justify-center gap-6 md:gap-10">
+<a class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors" href="index.html">Home</a>
+<a class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors" href="product-suite.html">Products</a>
+<a class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors" href="contact.html">Privacy</a>
+<a class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors" href="contact.html">Terms</a>
+</div>
+<div class="flex items-center gap-6">
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-primary/5 transition-all" href="contact.html" aria-label="Facebook"> <span class="material-symbols-outlined text-xl">facebook</span></a>
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-primary/5 transition-all" href="contact.html" aria-label="Email"> <span class="material-symbols-outlined text-xl">alternate_email</span></a>
+</div>
+</div>
+<div class="mt-16 pt-8 border-t border-black/[0.03] text-center">
+<p class="text-tertiary text-[13px] font-medium tracking-wide">© 2024 Rich &amp; Well Ecosystem. Designed for global impact.</p>
+</div>
+</div>
+</footer>
+<script>
+    // Intersection Observer for Entrance Animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+
+    menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('open');
+        menuIcon.textContent = mobileMenu.classList.contains('open') ? 'close' : 'menu';
+    });
+
+    // Close menu on mobile nav link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+            menuIcon.textContent = 'menu';
+        });
+    });
+
+    // Close menu on click outside
+    document.addEventListener('click', (e) => {
+        if (!menuToggle.contains(e.target) && !mobileMenu.contains(e.target) && mobileMenu.classList.contains('open')) {
+            mobileMenu.classList.remove('open');
+            menuIcon.textContent = 'menu';
+        }
+    });
+
+    // Navbar Scroll Effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 20) {
+            navbar.classList.add('py-1', 'shadow-sm');
+        } else {
+            navbar.classList.remove('py-1', 'shadow-sm');
+        }
+    });
+</script>
+</body></html>

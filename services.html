@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Our Services | Rich &amp; Well</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#0056D2",
+                    "primary-hover": "#0045a8",
+                    "surface": "#ffffff",
+                    "background": "#f8f9fa",
+                    "on-surface": "#131313",
+                    "on-surface-variant": "#475569",
+                    "border-light": "#E2E8F0",
+                    "gold-accent": "#D4AF37",
+                    "surface-container-lowest": "#fcfcfc"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "unit": "8px",
+                    "container-max": "1280px",
+                    "margin-mobile": "20px",
+                    "section-padding": "clamp(64px, 10vw, 128px)",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "display": ["Hanken Grotesk", "sans-serif"],
+                    "body": ["Inter", "sans-serif"]
+            },
+            "fontSize": {
+                    "display-lg": ["clamp(40px, 8vw, 64px)", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["clamp(24px, 5vw, 32px)", {"lineHeight": "1.3", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "body-lg": ["clamp(16px, 2vw, 18px)", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #f8f9fa;
+            color: #131313;
+            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .apple-card {
+            background: #ffffff;
+            border: 1px solid #E2E8F0;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .apple-card:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            transform: translateY(-8px);
+        }
+        
+        #mobile-menu {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        #mobile-menu.hidden-menu {
+            transform: translateX(100%);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .active .stagger-item {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #lang-dropdown { display: none; }
+        #lang-selector:focus-within #lang-dropdown { display: block; }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="antialiased">
+<!-- Navigation (Master Nav from SCREEN_67) -->
+<nav class="fixed top-0 w-full z-50 glass-nav border-b border-border-light shadow-sm" id="main-nav">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 md:h-20 flex items-center justify-between">
+<div class="flex items-center gap-2 flex-shrink-0">
+<img alt="Rich &amp; Well Logo" class="h-8 md:h-10 w-auto" src="https://lh3.googleusercontent.com/aida/ADBb0ui9MhtVIZEujCeu4Pu5noOB5TYeJudGVrTGRqzmQ98zXSsYOmThaI4CB1myU2bT4NUVDD2E7pAsXIxYQ7EMRjHpyX-i1ayii4iR-YykPY7mmb8cfNmXON7z6gJC-KkYLoAp8Af4gJfJBWtbRLKv4-c0ysgHyI46y-CT2yENEOOUHFA-j--uTxutHTN1zpQ_r0fLZXnvxJYwX0PSWptAuzMiUBzugTEiad6I6iFkotVogU_w9TRz1NhP_EE"/>
+<span class="font-display font-bold text-lg md:text-xl hidden lg:inline-block text-on-surface">Rich &amp; Well</span>
+</div>
+<!-- Desktop Navigation Items -->
+<div class="hidden xl:flex items-center gap-6">
+<a class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap" href="index.html">Home</a>
+<a class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap" href="about.html">About Us</a>
+<a class="text-sm font-semibold text-primary whitespace-nowrap" href="services.html">Services</a>
+<a class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap" href="product-suite.html">Product Suite</a>
+<a class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap" href="blog.html">Blog</a>
+<a class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap" href="business-opportunity.html">Business Opportunity</a>
+<a class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap" href="contact.html">Contact Us</a>
+</div>
+<!-- Action Items -->
+<div class="hidden lg:flex items-center gap-4">
+<div class="relative group" id="lang-selector">
+<button class="flex items-center gap-1 text-xs font-bold text-on-surface-variant cursor-pointer border border-border-light px-2 py-1.5 rounded hover:bg-black/5 transition-colors">
+<span class="material-symbols-outlined text-base">language</span> EN
+                    </button>
+<div class="absolute top-full right-0 mt-2 w-32 bg-white border border-border-light rounded-lg shadow-xl py-2 group-hover:block" id="lang-dropdown">
+<a class="block px-4 py-2 text-xs text-on-surface hover:bg-slate-50" href="#" onclick="event.preventDefault()">English</a>
+<a class="block px-4 py-2 text-xs text-on-surface hover:bg-slate-50" href="#" onclick="event.preventDefault()">Français</a>
+<a class="block px-4 py-2 text-xs text-on-surface hover:bg-slate-50" href="#" onclick="event.preventDefault()">Hausa</a>
+</div>
+</div>
+<a class="text-sm font-semibold text-on-surface-variant hover:text-primary px-3 py-2 transition-colors" href="login.html">Login</a>
+<a class="px-5 py-2.5 bg-primary text-white rounded-full text-sm font-bold hover:bg-primary-hover transition-all shadow-sm" href="signup.html">Get Started</a>
+</div>
+<!-- Mobile Toggle -->
+<button aria-label="Menu" class="xl:hidden p-2 text-on-surface" id="mobile-toggle">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</nav>
+<!-- Mobile Menu Overlay -->
+<div class="fixed inset-0 z-[60] bg-white hidden-menu flex flex-col p-6 overflow-y-auto" id="mobile-menu">
+<div class="flex justify-between items-center mb-10">
+<span class="font-display font-bold text-xl">Rich &amp; Well</span>
+<button class="p-2" id="mobile-close"><span class="material-symbols-outlined text-3xl">close</span></button>
+</div>
+<div class="flex flex-col gap-6 text-xl font-semibold">
+<a class="hover:text-primary transition-colors" href="index.html">Home</a>
+<a class="hover:text-primary transition-colors" href="about.html">About Us</a>
+<a class="text-primary" href="services.html">Services</a>
+<a class="hover:text-primary transition-colors" href="product-suite.html">Product Suite</a>
+<a class="hover:text-primary transition-colors" href="blog.html">Blog</a>
+<a class="hover:text-primary transition-colors" href="business-opportunity.html">Business Opportunity</a>
+<a class="hover:text-primary transition-colors" href="contact.html">Contact Us</a>
+<hr class="border-border-light my-2"/>
+<div class="flex items-center justify-between py-2 text-sm text-on-surface-variant font-bold">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined">language</span> Language
+                </div>
+<select class="bg-transparent border-none focus:ring-0 text-primary">
+<option>English (EN)</option>
+<option>Français (FR)</option>
+</select>
+</div>
+<a class="text-center py-4 border border-border-light rounded-2xl text-lg hover:bg-slate-50 transition-colors" href="login.html">Login</a>
+<a class="text-center py-4 bg-primary text-white rounded-2xl text-lg font-bold shadow-lg" href="signup.html">Get Started</a>
+</div>
+</div>
+<main class="mt-16 md:mt-20">
+<!-- Hero Section (Services Header) -->
+<section class="reveal relative py-section-padding px-4 sm:px-6 max-w-7xl mx-auto overflow-hidden">
+<div class="text-center space-y-8 mb-16">
+<span class="text-xs font-bold text-primary tracking-[0.2em] uppercase block stagger-item">Comprehensive Wellness Solutions</span>
+<h1 class="font-display text-display-lg text-on-surface leading-tight stagger-item">
+                    Our <span class="text-primary italic">Services</span>
+</h1>
+<p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto stagger-item">
+                    In addition to Products Sales, We also Render Services of Essential Value to our sovereign global community.
+                </p>
+<div class="mt-12 rounded-3xl overflow-hidden apple-card max-w-5xl mx-auto stagger-item">
+<img alt="Community interaction" class="w-full aspect-video object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBngVyPZV8qoiDgZf9urSf6eqBCAWsVq5wtDOj-m4NmHRormA1JWFwdoh4Jq_IifFhwJlo46OtoguUSf-SmbYFuY2tNszeOJL9YqGhLOBYxWcqXu605SP9kAw4Aodk_Zlk_KyCcshqUg0h_mhmCHsgZiGZvws7uN0A4kqEy96ja8SvbeKZXhvtXmiu3NRa453l_fHZCsqELt8a-k-Gthp3odZExJiKRM3bJVJ3_x1RqQatipVtkk4BjvDCKfqj9I1nxKse_EZwm3c3M"/>
+</div>
+</div>
+</section>
+<!-- Core Services Grid -->
+<section class="reveal py-section-padding bg-slate-50 border-y border-border-light">
+<div class="max-w-7xl mx-auto px-4 sm:px-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Service Card 1 -->
+<div class="apple-card rounded-2xl p-8 md:p-10 flex flex-col md:flex-row gap-6 stagger-item">
+<div class="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-4xl">forest</span>
+</div>
+<div>
+<h3 class="font-display text-2xl font-bold text-on-surface mb-3">Plant a Tree Project</h3>
+<p class="text-on-surface-variant leading-relaxed">Plant 5 Million Trees Across the Capital Cities of African Countries and inspire the Tribe to do likewise in their own little way, wherever they are.</p>
+</div>
+</div>
+<!-- Service Card 2 -->
+<div class="apple-card rounded-2xl p-8 md:p-10 flex flex-col md:flex-row gap-6 stagger-item">
+<div class="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-4xl">shopping_cart</span>
+</div>
+<div>
+<h3 class="font-display text-2xl font-bold text-on-surface mb-3">Dropshipping</h3>
+<p class="text-on-surface-variant leading-relaxed">Earn Big Profits as a Reseller of our Health, Wellness and other Consumer Goods without Using Any of Your Personal Money. Keep All the Profit without Having Any Stock.</p>
+</div>
+</div>
+<!-- Service Card 3 -->
+<div class="apple-card rounded-2xl p-8 md:p-10 flex flex-col md:flex-row gap-6 stagger-item">
+<div class="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-4xl">terminal</span>
+</div>
+<div>
+<h3 class="font-display text-2xl font-bold text-on-surface mb-3">ICT4D</h3>
+<p class="text-on-surface-variant leading-relaxed">Information Communication Technology For Development. A Tuition-Free ICT Training for African Youths to Bridge the Technology Divide.</p>
+</div>
+</div>
+<!-- Service Card 4 -->
+<div class="apple-card rounded-2xl p-8 md:p-10 flex flex-col md:flex-row gap-6 stagger-item">
+<div class="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-4xl">payments</span>
+</div>
+<div>
+<h3 class="font-display text-2xl font-bold text-on-surface mb-3">Street Smart Money School</h3>
+<p class="text-on-surface-variant leading-relaxed">Education, Empowerment and Strategy for Holistic Wealth: How to Make, Manage, Multiply and Give Out More Money.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Expanded Ecosystem -->
+<section class="reveal py-section-padding bg-white overflow-hidden">
+<div class="max-w-7xl mx-auto px-4 sm:px-6">
+<div class="text-center mb-16 space-y-4">
+<span class="text-xs font-bold text-primary tracking-[0.3em] uppercase block stagger-item">Our Philosophy</span>
+<h2 class="font-display text-headline-md text-on-surface uppercase tracking-widest stagger-item">Expanded Ecosystem Services</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Ecosystem Item 1 -->
+<div class="p-8 border-l-4 border-primary bg-slate-50 rounded-r-lg space-y-4 stagger-item">
+<h3 class="font-display text-xl font-bold text-on-surface">Life Development University:</h3>
+<p class="text-on-surface-variant text-sm">Online Training Program to Equip the Community to Build the Recipe of Greatness and Become the Best Version of Themselves.</p>
+</div>
+<!-- Ecosystem Item 2 -->
+<div class="p-8 border-l-4 border-primary bg-slate-50 rounded-r-lg space-y-4 stagger-item">
+<h3 class="font-display text-xl font-bold text-on-surface">Tzedakar:</h3>
+<p class="text-on-surface-variant text-sm">A Result-Oriented Giving That Zealously Deploy Resources to Charity &amp; Other Social Actions.</p>
+</div>
+<!-- Ecosystem Item 3 -->
+<div class="p-8 border-l-4 border-primary bg-slate-50 rounded-r-lg space-y-4 stagger-item">
+<h3 class="font-display text-xl font-bold text-on-surface">Next Level Co-op:</h3>
+<p class="text-on-surface-variant text-sm">A Cooperative System That Provides Interest-Free Loans Without Collaterals to Those Who REALLY Need It.</p>
+</div>
+<!-- Ecosystem Item 4 -->
+<div class="p-8 border-l-4 border-primary bg-slate-50 rounded-r-lg space-y-4 stagger-item">
+<h3 class="font-display text-xl font-bold text-on-surface">Pay It Forward (PIF) Pledge:</h3>
+<p class="text-on-surface-variant text-sm">Help Someone in Need and asking that The Good Deed or Action of Kindness be Repaid by Having it Done to Others.</p>
+</div>
+<!-- Ecosystem Item 5 -->
+<div class="p-8 border-l-4 border-primary bg-slate-50 rounded-r-lg space-y-4 stagger-item">
+<h3 class="font-display text-xl font-bold text-on-surface">Feed the Hungry:</h3>
+<p class="text-on-surface-variant text-sm">A Hunger Relief Outreach Providing Food &amp; Other Necessities to the Poor, Needy and Hungry Persons and Communities.</p>
+</div>
+<!-- Ecosystem Item 6 -->
+<div class="p-8 border-l-4 border-primary bg-slate-50 rounded-r-lg space-y-4 stagger-item">
+<h3 class="font-display text-xl font-bold text-on-surface">Tuition Aid:</h3>
+<p class="text-on-surface-variant text-sm">A Crusade to Send Out-of-School &amp; Under-Aged Street Hawkers to School.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Medical Missions Feature -->
+<section class="reveal py-section-padding bg-slate-50 border-t border-border-light overflow-hidden">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="space-y-8">
+<span class="text-xs font-bold text-primary tracking-[0.2em] uppercase block stagger-item">Health Outreach</span>
+<h2 class="font-display text-headline-md text-on-surface stagger-item">Medical Missions:</h2>
+<p class="text-body-lg text-on-surface-variant stagger-item leading-relaxed">
+                        A Monthly Outreach that Provides Health &amp; Wellness Services including, but not limited to Comprehensive Scan &amp; Medical Check Up, Detoxification Exercise and Complimentary and Alternative Medicines to Communities and Rural Areas.
+                    </p>
+<div class="stagger-item">
+<div class="px-6 py-4 bg-white rounded-2xl border border-border-light inline-flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">verified</span>
+<span class="font-bold text-sm tracking-wide uppercase text-primary">All Services are Free</span>
+</div>
+</div>
+</div>
+<div class="rounded-3xl overflow-hidden apple-card stagger-item">
+<img alt="Medical mission professionals" class="w-full h-[450px] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIPXBDNgYn6znaFxKpQyIcRsiweS6f2QGUxcQX2bgghxeJnNNh6Plut4BAxk2nEohaOWLB6vbL-OtB-9X7DOnsf8cRheeUSZe0WvXTwIWAVJA10YHtWDUKjLzpZpuaeZN1Ov3b_qfZKAfQhvKT15J__9SAXhpDK2AOBL64-01D5QGR8zDj_BscqUE9y08Lhm8I2eVdC_hDBgmbZdeZmrPMJN330q9HX0-G2bv35k6IQ1X4aYws_skuK6CIxc7aua-mZL-QPd9dRX5n"/>
+</div>
+</div>
+</section>
+<!-- Empowerment Feature -->
+<section class="reveal py-section-padding bg-white overflow-hidden">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="order-2 lg:order-1 rounded-3xl overflow-hidden apple-card stagger-item">
+<img alt="Empowered individuals" class="w-full h-[450px] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_DBmGa7c9rPpapW7g8_b4oxFb_ZXZGd65A37WzCxcXA-rh_3SLyjaj_zs89zq4HlMJX4SU-dxwXVotDYfkE2lL-4UNAnoIxgfkhrjCaGJyrcDpB-QYuHCQQtVs0hQ0fFwJRAV_o3LG24ixxNmnjeaNRJkV9pS_QdsxTUGzbNiXRtfY_dc4bLdOwhfLZ2vYz--114XFUJQaY4F5XxrOizcP89Dblul6nN3SJdAhXkopRsrNDebRUT32lEEGL7W9LWYBJ1CAn-31t58"/>
+</div>
+<div class="order-1 lg:order-2 space-y-8">
+<span class="text-xs font-bold text-primary tracking-[0.2em] uppercase block stagger-item">Social Impact</span>
+<h2 class="font-display text-headline-md text-on-surface stagger-item">Widows, Single Moms &amp; Youth Empowerment:</h2>
+<p class="text-body-lg text-on-surface-variant stagger-item leading-relaxed">
+                        Provide them with the Needed Skills and Cash Gifts to enable them Become Self Sufficient and Independent.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Quote Section -->
+<section class="reveal py-section-padding bg-slate-50 border-t border-border-light">
+<div class="max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-10">
+<div class="w-16 h-1.5 bg-primary/20 mx-auto rounded-full stagger-item"></div>
+<p class="font-display text-3xl md:text-4xl italic text-on-surface font-medium leading-relaxed stagger-item">
+                    "Herein Lies our Inspiration, Motivation &amp; Greatest Passion. We Spend a Substantial Part of Corporate Profits for the Achievement of the Aforementioned Cause."
+                </p>
+<p class="text-body-lg text-on-surface-variant stagger-item">
+                    And if we can be remembered as Friends of the Poor, Destitute, Needy and Less-Privileged, it will be an Honor Well Deserved.
+                </p>
+<div class="w-16 h-1.5 bg-primary/20 mx-auto rounded-full stagger-item"></div>
+</div>
+</section>
+</main>
+<!-- Footer (Master Footer from SCREEN_67/61) -->
+<footer class="bg-white border-t border-border-light py-12 md:py-20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+<div class="col-span-1 md:col-span-1 space-y-6">
+<div class="flex items-center gap-3">
+<img alt="Logo" class="h-8 md:h-10" src="https://lh3.googleusercontent.com/aida/ADBb0ui9MhtVIZEujCeu4Pu5noOB5TYeJudGVrTGRqzmQ98zXSsYOmThaI4CB1myU2bT4NUVDD2E7pAsXIxYQ7EMRjHpyX-i1ayii4iR-YykPY7mmb8cfNmXON7z6gJC-KkYLoAp8Af4gJfJBWtbRLKv4-c0ysgHyI46y-CT2yENEOOUHFA-j--uTxutHTN1zpQ_r0fLZXnvxJYwX0PSWptAuzMiUBzugTEiad6I6iFkotVogU_w9TRz1NhP_EE"/>
+<span class="font-display font-bold text-xl md:text-2xl text-on-surface">Rich &amp; Well</span>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+                        Empowering Diaspora and Indigenous African Families with Wealth and Wellness through a Multi-Faceted Ecosystem of Holistic Services.
+                    </p>
+</div>
+<div>
+<h5 class="text-on-surface font-bold text-xs uppercase tracking-[0.2em] mb-8">Quick Links</h5>
+<ul class="space-y-4 text-sm font-medium text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="index.html">Home</a></li>
+<li><a class="hover:text-primary transition-colors" href="about.html">About Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="services.html">Services</a></li>
+<li><a class="hover:text-primary transition-colors" href="product-suite.html">Product Suite</a></li>
+<li><a class="hover:text-primary transition-colors" href="business-opportunity.html">Business Opportunity</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-on-surface font-bold text-xs uppercase tracking-[0.2em] mb-8">Get In Touch</h5>
+<div class="text-sm text-on-surface-variant space-y-4">
+<p>108, New Lagos Road (2nd Floor),<br/>By Akugbe Junction, Benin City,<br/>Edo State, Nigeria.</p>
+<p class="font-bold text-primary">Hotline: +234 907 451 2471</p>
+</div>
+</div>
+<div>
+<h5 class="text-on-surface font-bold text-xs uppercase tracking-[0.2em] mb-8">Newsletter</h5>
+<p class="text-sm text-on-surface-variant mb-6">Subscribe to receive frequency healing updates.</p>
+<div class="flex">
+<input class="bg-slate-50 border border-border-light text-sm px-4 py-3 rounded-l-lg w-full focus:ring-1 focus:ring-primary outline-none" placeholder="Email address" type="email"/>
+<button class="bg-primary text-white px-6 py-3 rounded-r-lg font-bold text-sm hover:bg-primary-hover transition-colors">Join</button>
+</div>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center gap-10 pt-10 border-t border-border-light">
+<p class="text-xs md:text-sm text-on-surface-variant text-center order-3 md:order-none">© 2026 Rich &amp; Well Lifestyle. All rights reserved.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 md:w-12 md:h-12 border border-border-light rounded-full flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all text-on-surface-variant" href="#"><span class="material-symbols-outlined text-sm md:text-base">public</span></a>
+<a class="w-10 h-10 md:w-12 md:h-12 border border-border-light rounded-full flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all text-on-surface-variant" href="#"><span class="material-symbols-outlined text-sm md:text-base">alternate_email</span></a>
+<a class="w-10 h-10 md:w-12 md:h-12 border border-border-light rounded-full flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all text-on-surface-variant" href="#"><span class="material-symbols-outlined text-sm md:text-base">share</span></a>
+</div>
+<div class="flex gap-6 text-xs font-bold text-on-surface-variant uppercase tracking-wider">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- Back to Top -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform z-50 opacity-0 pointer-events-none translate-y-10" id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+<span class="material-symbols-outlined">arrow_upward</span>
+</button>
+<script>
+        // Navigation Toggles
+        const toggle = document.getElementById('mobile-toggle');
+        const close = document.getElementById('mobile-close');
+        const menu = document.getElementById('mobile-menu');
+
+        toggle.onclick = () => {
+            menu.classList.remove('hidden-menu');
+        };
+        close.onclick = () => {
+            menu.classList.add('hidden-menu');
+        };
+
+        // Close mobile menu on link click (so mobile nav links are actually usable)
+        if (menu) {
+            menu.querySelectorAll('a').forEach(link => {
+                link.onclick = () => {
+                    menu.classList.add('hidden-menu');
+                };
+            });
+        }
+
+        // Scroll Effects for Back to Top and Nav
+        window.addEventListener('scroll', () => {
+            const btt = document.getElementById('backToTop');
+            const nav = document.getElementById('main-nav');
+            
+            if (window.scrollY > 300) {
+                btt.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-10');
+                btt.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+            } else {
+                btt.classList.add('opacity-0', 'pointer-events-none', 'translate-y-10');
+                btt.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+            }
+
+            if (window.scrollY > 50) {
+                nav.classList.add('py-1');
+            } else {
+                nav.classList.remove('py-1');
+            }
+        });
+
+        // Reveal-on-scroll Intersection Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    </script>
+</body></html>
